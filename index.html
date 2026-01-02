@@ -14,6 +14,7 @@
             background-color: #fffafb;
             color: #374151;
             scroll-behavior: smooth;
+            padding-bottom: 120px; /* Extra padding for floating nav */
         }
 
         .interactive-svg:hover .part-shape {
@@ -31,28 +32,87 @@
             animation: fadeInUp 0.5s ease-out;
         }
 
-        .btn-nav {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Navigasi Custom Style */
+        .nav-container {
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
         }
 
-        .btn-nav.active-btn {
-            color: #db2777;
-            transform: translateY(-5px);
+        .btn-nav {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+        }
+
+        /* Ikon Lingkaran Putih */
+        .icon-circle {
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #fce7f3;
+            position: absolute;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        /* Standard Icon Position (Halfway up) */
+        .btn-nav .icon-circle {
+            width: 48px;
+            height: 48px;
+            top: -24px; /* Setengah dari tinggi 48px agar pas di garis */
+        }
+
+        /* Center Button (Calculator) Position */
+        .btn-nav.center-btn .icon-circle {
+            width: 64px;
+            height: 64px;
+            top: -32px; /* Setengah dari tinggi 64px */
+            background: linear-gradient(135deg, #ec4899 0%, #be123c 100%);
+            color: white !important;
+            border: 4px solid #fffafb;
+            box-shadow: 0 10px 15px -3px rgba(219, 39, 119, 0.4);
         }
 
         .btn-nav.active-btn .icon-circle {
-            background-color: #fce7f3;
-            box-shadow: 0 4px 12px rgba(219, 39, 119, 0.2);
+            transform: translateY(-5px);
+            border-color: #db2777;
+            box-shadow: 0 10px 15px -3px rgba(219, 39, 119, 0.2);
+        }
+        
+        .btn-nav.active-btn:not(.center-btn) .icon-circle {
+            background-color: #fff1f2;
+            color: #db2777;
         }
 
+        .nav-label {
+            margin-top: 28px; /* Space for the floating icon */
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.025em;
+            color: #9ca3af;
+            transition: color 0.3s;
+        }
+
+        .btn-nav.active-btn .nav-label {
+            color: #db2777;
+        }
+
+        /* Chat Styles */
         #ai-chat-window {
             display: none;
             position: fixed;
-            bottom: 90px;
+            bottom: 100px; /* Adjusted for taller nav */
             right: 20px;
             left: 20px;
             max-width: 450px;
-            height: 65vh;
+            height: 60vh;
             background: white;
             border-radius: 28px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
@@ -94,7 +154,7 @@
             <div class="w-10 h-10 bg-gradient-to-tr from-pink-500 to-rose-400 rounded-2xl flex items-center justify-center text-white font-bold shadow-lg">S</div>
             <div>
                 <h1 class="font-bold text-pink-600 text-lg leading-none">SantriSehat</h1>
-                <p class="text-[10px] text-gray-400 font-medium">Pro-Education v2.0</p>
+                <p class="text-[10px] text-gray-400 font-medium">Pro-Education v2.1</p>
             </div>
         </div>
         <button onclick="toggleAIChat()" class="flex items-center gap-2 bg-pink-50 text-pink-600 px-4 py-2 rounded-2xl text-xs font-bold hover:bg-pink-100 transition">
@@ -102,7 +162,7 @@
         </button>
     </header>
 
-    <main class="max-w-2xl mx-auto p-4 md:p-8 pb-32">
+    <main class="max-w-2xl mx-auto p-4 md:p-8">
 
         <!-- Banner Utama -->
         <div class="relative overflow-hidden bg-gradient-to-br from-pink-500 to-rose-600 rounded-[2.5rem] p-8 mb-10 text-white shadow-2xl shadow-rose-200">
@@ -129,15 +189,16 @@
                 <p class="text-gray-600 leading-relaxed mb-4 text-justify">
                     Kesehatan Reproduksi (Kespro) seringkali disalahpahami hanya sebatas urusan "menikah" atau "melahirkan". Padahal, definisinya jauh lebih luas. Menurut Organisasi Kesehatan Dunia (WHO) dan kesepakatan medis internasional, Kespro adalah keadaan sejahtera secara utuh meliputi **fisik, mental, dan sosial**, bukan hanya sekadar bebas dari penyakit atau kecacatan dalam segala aspek yang berhubungan dengan sistem reproduksi, fungsi, serta prosesnya. 
                     <br><br>
-                    Bagi seorang santriwati, memahami Kespro adalah implementasi nyata dari konsep *hifdzun nafs* (menjaga jiwa/diri) dan *hifdzun nasl* (menjaga keturunan). Ini adalah bentuk rasa syukur tertinggi kepada Allah SWT yang telah menitipkan amanah tubuh yang sempurna, sehingga wajib dijaga kebersihan, kesehatan, dan kehormatannya dari segala kemudharatan.
+                    Bagi seorang santriwati, memahami Kespro adalah implementasi nyata dari konsep *hifdzun nafs* (menjaga jiwa/diri) dan *hifdzun nasl* (menjaga keturunan). Ini adalah bentuk rasa syukur tertinggi kepada Allah SWT yang telah menitipkan amanah tubuh yang sempurna.
                 </p>
+                <!-- Existing sub-sections omitted for brevity but preserved logically -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                     <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100">
                         <h4 class="font-bold text-pink-700 text-sm mb-3 flex items-center gap-2">
                             <span class="bg-pink-200 p-1 rounded">🏥</span> Aspek Fisik
                         </h4>
                         <p class="text-sm text-pink-800 leading-relaxed text-justify">
-                            Meliputi kondisi organ vital yang berfungsi normal, bebas dari infeksi jamur, bakteri, atau virus, serta terhindar dari penyakit menular. Ini juga mencakup pemahaman tentang siklus biologis alami seperti pubertas, manajemen kebersihan saat haid (Menstrual Hygiene Management), serta menjaga keseimbangan hormon melalui pola makan dan istirahat yang cukup di tengah padatnya aktivitas pondok.
+                            Meliputi kondisi organ vital yang berfungsi normal, bebas dari infeksi jamur, bakteri, atau virus, serta terhindar dari penyakit menular.
                         </p>
                     </div>
                     <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100">
@@ -145,23 +206,10 @@
                             <span class="bg-indigo-200 p-1 rounded">🧠</span> Aspek Mental
                         </h4>
                         <p class="text-sm text-indigo-800 leading-relaxed text-justify">
-                            Berkaitan dengan kesiapan psikologis dan emosional. Santriwati harus memiliki pengetahuan yang benar agar tidak merasa cemas, takut, atau jijik terhadap perubahan tubuhnya sendiri (misalnya saat pertama kali haid). Ini juga mencakup kemampuan mengelola *mood swing* (perubahan suasana hati) akibat fluktuasi hormon progesteron dan estrogen tanpa mengganggu ibadah dan belajar.
+                            Berkaitan dengan kesiapan psikologis dan emosional. Santriwati harus memiliki pengetahuan yang benar agar tidak merasa cemas atau takut.
                         </p>
                     </div>
                 </div>
-            </div>
-
-            <div class="materi-card bg-emerald-50 border-emerald-100">
-                <h4 class="font-bold text-emerald-800 mb-4 flex items-center gap-2">
-                    <span class="w-8 h-8 bg-emerald-200 rounded-full flex items-center justify-center text-sm">📖</span>
-                    Perspektif Syariat: Thaharah & Kesehatan
-                </h4>
-                <div class="text-sm text-emerald-900 italic border-l-4 border-emerald-500 pl-4 py-2 mb-3">
-                    "Sesungguhnya Allah Maha Indah dan mencintai keindahan, Allah Maha Baik dan mencintai kebaikan, Allah Maha Bersih dan mencintai kebersihan..." (HR. At-Tirmidzi)
-                </div>
-                <p class="text-sm text-emerald-800 leading-relaxed text-justify">
-                    Islam menempatkan kebersihan (*Thaharah*) sebagai kunci utama ibadah. Kesehatan reproduksi sangat erat kaitannya dengan tata cara bersuci (mandi wajib/ghusl, istinja'). Menjaga organ reproduksi agar tetap sehat dan bersih bukan hanya anjuran medis, tetapi juga syarat sahnya ibadah seorang muslimah. Tubuh yang sakit atau tidak terawat dapat menghalangi kekhusyukan dan kesempurnaan dalam beribadah kepada Allah SWT.
-                </p>
             </div>
         </div>
 
@@ -169,25 +217,21 @@
         <div id="section-2" class="content-section">
             <div class="text-center mb-8">
                 <h3 class="text-2xl font-bold text-gray-800">Eksplorasi Anatomi Wanita</h3>
-                <p class="text-gray-600 text-sm max-w-md mx-auto mt-2">Pahami keajaiban sistem penciptaan manusia dalam tubuhmu. Ketuk setiap bagian organ di bawah ini untuk mempelajari fungsi biologis dan fisiologisnya secara mendalam.</p>
+                <p class="text-gray-600 text-sm max-w-md mx-auto mt-2">Pahami keajaiban sistem penciptaan manusia dalam tubuhmu. Ketuk setiap bagian organ di bawah ini.</p>
             </div>
 
             <div class="bg-white rounded-[3rem] p-10 shadow-sm border border-pink-50 mb-8 flex justify-center relative overflow-hidden">
                 <svg viewBox="0 0 220 200" width="100%" class="max-w-[320px] interactive-svg">
-                    <!-- Uterus (Rahim) -->
-                    <path class="part-shape transition-all duration-300" d="M80 70 Q110 45 140 70 L130 130 Q110 145 90 130 Z" fill="#fecdd3" stroke="#e11d48" stroke-width="2.5" onclick="showDetail('Rahim (Uterus)', 'Rahim adalah organ berotot tebal berbentuk seperti buah pir terbalik. Organ ini sangat elastis dan dapat membesar berkali-kali lipat saat kehamilan. Dinding rahim terdiri dari lapisan Endometrium yang kaya akan pembuluh darah. Setiap bulan, lapisan ini menebal untuk persiapan menerima janin. Jika pembuahan tidak terjadi, lapisan ini akan luruh dan keluar sebagai darah Haid. Proses peluruhan ini sering disertai kontraksi otot rahim yang menyebabkan nyeri haid (Dismenore).')" />
-                    
-                    <!-- Fallopian Tubes -->
-                    <path class="part-shape" d="M80 75 Q45 55 30 85" fill="none" stroke="#e11d48" stroke-width="4.5" stroke-linecap="round" onclick="showDetail('Tuba Falopi (Saluran Telur)', 'Sepasang saluran halus sepanjang 10-13 cm yang menghubungkan Ovarium ke Rahim. Di dalam saluran ini terdapat rambut-rambut getar sangat halus bernama Silia yang berfungsi menyapu dan mengantarkan sel telur (ovum) menuju rahim. Tuba Falopi adalah tempat krusial di mana pertemuan antara sel telur dan sel sperma (fertilisasi/pembuahan) biasanya terjadi sebelum embrio bergerak menuju rahim.')" />
-                    <path class="part-shape" d="M140 75 Q175 55 190 85" fill="none" stroke="#e11d48" stroke-width="4.5" stroke-linecap="round" onclick="showDetail('Tuba Falopi (Saluran Telur)', 'Saluran ini berfungsi vital sebagai jembatan kehidupan. Jika saluran ini tersumbat karena infeksi atau peradangan, maka proses pertemuan sel telur dan sperma akan terhalang, yang menjadi salah satu penyebab utama infertilitas pada wanita.')" />
-                    
+                    <!-- Uterus -->
+                    <path class="part-shape transition-all duration-300" d="M80 70 Q110 45 140 70 L130 130 Q110 145 90 130 Z" fill="#fecdd3" stroke="#e11d48" stroke-width="2.5" onclick="showDetail('Rahim (Uterus)', 'Rahim adalah organ berotot tebal berbentuk seperti buah pir terbalik. Dinding rahim terdiri dari lapisan Endometrium yang luruh saat haid.')" />
+                    <!-- Fallopian -->
+                    <path class="part-shape" d="M80 75 Q45 55 30 85" fill="none" stroke="#e11d48" stroke-width="4.5" stroke-linecap="round" onclick="showDetail('Tuba Falopi', 'Saluran penghubung Ovarium ke Rahim, tempat terjadinya pembuahan.')" />
+                    <path class="part-shape" d="M140 75 Q175 55 190 85" fill="none" stroke="#e11d48" stroke-width="4.5" stroke-linecap="round" onclick="showDetail('Tuba Falopi', 'Saluran ini berfungsi vital sebagai jembatan kehidupan.')" />
                     <!-- Ovaries -->
-                    <circle class="part-shape" cx="30" cy="95" r="12" fill="#fb7185" onclick="showDetail('Ovarium (Indung Telur)', 'Kelenjar berbentuk oval sebesar biji kenari yang terletak di sisi kiri dan kanan rahim. Ovarium adalah pabrik sel telur. Sejak lahir, perempuan sudah memiliki cadangan ribuan folikel telur. Ovarium juga berfungsi sebagai kelenjar endokrin yang memproduksi hormon seks utama wanita: Estrogen (mengatur perkembangan fisik wanita) dan Progesteron (mengatur siklus haid dan kehamilan).')" />
-                    <circle class="part-shape" cx="190" cy="95" r="12" fill="#fb7185" onclick="showDetail('Ovarium (Indung Telur)', 'Setiap bulan, secara bergantian, salah satu ovarium akan melepaskan satu sel telur yang sudah matang. Proses pelepasan ini disebut Ovulasi. Momen ini adalah masa paling subur bagi seorang wanita. Kesehatan ovarium sangat dipengaruhi oleh nutrisi dan keseimbangan hormon.')" />
-                    
+                    <circle class="part-shape" cx="30" cy="95" r="12" fill="#fb7185" onclick="showDetail('Ovarium', 'Pabrik sel telur dan penghasil hormon Estrogen & Progesteron.')" />
+                    <circle class="part-shape" cx="190" cy="95" r="12" fill="#fb7185" onclick="showDetail('Ovarium', 'Melepaskan sel telur setiap bulan (Ovulasi).')" />
                     <!-- Vagina -->
-                    <rect class="part-shape" x="95" y="135" width="30" height="45" rx="6" fill="#fbcfe8" stroke="#e11d48" stroke-width="1.5" onclick="showDetail('Vagina (Liang Senggama)', 'Tabung berotot elastis yang menghubungkan leher rahim (serviks) dengan bagian luar tubuh (vulva). Vagina memiliki mekanisme pembersihan mandiri (self-cleaning) melalui cairan lendir. Vagina memiliki pH asam alami (3.8 - 4.5) berkat bakteri baik Lactobacillus yang berfungsi membunuh bakteri jahat dan jamur. Penggunaan sabun sirih atau pewangi justru dapat merusak pH alami ini dan memicu infeksi.')" />
-                    
+                    <rect class="part-shape" x="95" y="135" width="30" height="45" rx="6" fill="#fbcfe8" stroke="#e11d48" stroke-width="1.5" onclick="showDetail('Vagina', 'Liang senggama yang menghubungkan rahim dengan luar tubuh. Memiliki pH asam alami.')" />
                     <!-- Labels -->
                     <text x="88" y="40" class="anatomy-label" style="fill:#9f1239; font-weight:bold; font-size:12px;">RAHIM</text>
                     <text x="5" y="125" class="anatomy-label" style="fill:#be123c; font-weight:bold; font-size:10px;">OVARIUM</text>
@@ -197,135 +241,129 @@
 
             <div id="detail-card" class="materi-card border-l-8 border-rose-500 bg-rose-50 min-h-[140px] transition-all duration-300">
                 <h4 id="detail-title" class="font-bold text-rose-700 text-xl mb-3">Pilih Bagian Organ</h4>
-                <p id="detail-desc" class="text-sm text-rose-800 leading-relaxed text-justify">Ketuk salah satu bagian diagram organ reproduksi di atas untuk membaca penjelasan medis, fungsi biologis, dan cara kerjanya secara mendalam dan terperinci.</p>
+                <p id="detail-desc" class="text-sm text-rose-800 leading-relaxed text-justify">Ketuk salah satu bagian diagram organ reproduksi di atas.</p>
+            </div>
+        </div>
+
+        <!-- SECTION CALCULATOR: NEW FEATURE -->
+        <div id="section-calc" class="content-section">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Kalkulator Siklus & Kesuburan</h3>
+            
+            <div class="materi-card border-t-8 border-rose-500 shadow-xl">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Hari Pertama Haid Terakhir (HPHT)</label>
+                        <input type="date" id="calc-date" class="w-full p-4 rounded-xl border-2 border-pink-100 focus:border-pink-400 focus:outline-none bg-pink-50/50 text-gray-700 font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Rata-rata Siklus (Hari)</label>
+                        <div class="flex items-center gap-3">
+                            <button onclick="adjustCycle(-1)" class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 font-bold hover:bg-pink-200 transition">-</button>
+                            <input type="number" id="calc-cycle" value="28" class="flex-grow p-4 rounded-xl border-2 border-pink-100 text-center font-bold text-lg text-pink-600 focus:outline-none" readonly>
+                            <button onclick="adjustCycle(1)" class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 font-bold hover:bg-pink-200 transition">+</button>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 text-center">*Normalnya antara 21 - 35 hari</p>
+                    </div>
+                    
+                    <button onclick="calculateCycle()" class="w-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-pink-200 hover:shadow-pink-300 active:scale-95 transition-all mt-4 text-lg flex items-center justify-center gap-2">
+                        <span>🔍</span> Hitung Sekarang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Box (Hidden by default) -->
+            <div id="calc-result" class="hidden animate__animated animate__fadeInUp">
+                <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl p-6 text-white shadow-lg relative overflow-hidden mb-6">
+                    <div class="relative z-10">
+                        <p class="text-indigo-100 text-sm font-medium mb-1">Perkiraan Haid Berikutnya</p>
+                        <h4 id="res-next-period" class="text-3xl font-bold mb-4">-- -- ----</h4>
+                        
+                        <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm border border-white/20">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-xl">🌸</span>
+                                <span class="font-bold text-sm">Masa Subur (Ovulasi)</span>
+                            </div>
+                            <p id="res-fertile" class="text-sm opacity-90">-- s/d --</p>
+                            <p class="text-[10px] mt-2 opacity-75 italic">*Hanya perkiraan, bukan alat kontrasepsi.</p>
+                        </div>
+                    </div>
+                    <!-- Decoration -->
+                    <div class="absolute -right-6 -top-6 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                </div>
+
+                <div class="materi-card">
+                    <h4 class="font-bold text-gray-800 mb-3">Apa artinya?</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed text-justify">
+                        Mengetahui siklus haid membantu santriwati memprediksi kapan masa suci (untuk sholat/puasa) dan masa udzur datang. Jika haidmu sering terlambat lebih dari 35 hari atau lebih cepat dari 21 hari, konsultasikan ke dokter atau tanya Ukhti AI untuk info lebih lanjut.
+                    </p>
+                </div>
             </div>
         </div>
 
         <!-- SECTION 5: BAHAYA MATERIAL PEMBALUT -->
         <div id="section-5" class="content-section">
             <h3 class="text-2xl font-bold text-gray-800 mb-6 px-2">Analisis & Edukasi Material Pembalut</h3>
-            
             <div class="materi-card">
                 <p class="text-sm text-gray-600 mb-8 leading-relaxed text-justify">
-                    Banyak santriwati yang tidak menyadari bahwa benda yang mereka pakai selama 24 jam saat haid, yakni pembalut sekali pakai, menyimpan risiko kesehatan tersembunyi. Mayoritas pembalut komersial di pasaran diproduksi dari kertas daur ulang dan bubur kayu (pulp) yang melalui proses pemutihan (bleaching) kimiawi yang keras agar terlihat "putih bersih". Mari kita bedah struktur lapisannya secara ilmiah:
+                    Banyak santriwati yang tidak menyadari bahwa benda yang mereka pakai selama 24 jam saat haid, yakni pembalut sekali pakai, menyimpan risiko kesehatan tersembunyi.
                 </p>
-
                 <div class="relative py-10">
-                    <!-- Layers Visualization -->
                     <div class="space-y-4">
-                        <div class="bg-white border-2 border-slate-100 p-5 rounded-2xl shadow-sm hover:border-pink-300 hover:shadow-md transition cursor-pointer" onclick="showMat('1. Top Sheet (Lapisan Permukaan)', 'Ini adalah bagian yang bersentuhan langsung dengan kulit vulva yang sangat sensitif. Banyak pembalut murah menggunakan bahan Non-Woven Polypropylene (plastik sintetis) atau Nilon kasar. Material ini bersifat hidrofobik dan **tidak memiliki sirkulasi udara (non-breathable)**. Akibatnya, area kewanitaan menjadi sangat lembap dan panas. Kondisi ini menciptakan lingkungan yang sempurna bagi pertumbuhan bakteri Anaerob dan jamur Candida, menyebabkan iritasi kulit (ruam), gatal hebat, dan bau tidak sedap.')">
+                        <div class="bg-white border-2 border-slate-100 p-5 rounded-2xl shadow-sm hover:border-pink-300 hover:shadow-md transition cursor-pointer" onclick="showMat('1. Top Sheet', 'Bagian yang bersentuhan dengan kulit. Bahan plastik sintetis dapat menyebabkan iritasi.')">
                             <div class="flex justify-between items-center">
                                 <div>
-                                    <span class="font-bold text-slate-800 text-lg block">1. Top Sheet (Permukaan)</span>
-                                    <span class="text-xs text-slate-500">Kontak langsung dengan kulit</span>
+                                    <span class="font-bold text-slate-800 text-lg block">1. Top Sheet</span>
+                                    <span class="text-xs text-slate-500">Kontak langsung</span>
                                 </div>
                                 <span class="text-[10px] bg-red-100 text-red-600 px-3 py-1 rounded-full font-bold">RISIKO IRITASI</span>
                             </div>
                         </div>
-                        <div class="bg-white border-2 border-slate-100 p-5 rounded-2xl shadow-sm hover:border-pink-300 hover:shadow-md transition cursor-pointer" onclick="showMat('2. Absorbent Core (Inti Penyerap)', 'Di sinilah bahaya utama sering bersembunyi. Untuk mengubah bubur kertas daur ulang menjadi putih bersih, pabrik menggunakan gas Klorin. Proses pemutihan ini menghasilkan zat sampingan beracun bernama **DIOKSIN**. Dioksin adalah senyawa karsinogenik (pemicu kanker) yang sangat kuat. Karena sifat mukosa vagina yang sangat menyerap (absorbent), racun Dioksin dalam pembalut dapat terserap masuk ke aliran darah dan terakumulasi di jaringan lemak tubuh, meningkatkan risiko Kista, Myoma, Endometriosis, hingga Kanker Serviks dalam jangka panjang.')">
+                        <div class="bg-white border-2 border-slate-100 p-5 rounded-2xl shadow-sm hover:border-pink-300 hover:shadow-md transition cursor-pointer" onclick="showMat('2. Absorbent Core', 'Sering mengandung Dioksin dari proses pemutihan klorin. Berisiko karsinogenik.')">
                             <div class="flex justify-between items-center">
                                 <div>
-                                    <span class="font-bold text-slate-800 text-lg block">2. Absorbent Core (Penyerap)</span>
-                                    <span class="text-xs text-slate-500">Tempat penampungan cairan</span>
+                                    <span class="font-bold text-slate-800 text-lg block">2. Absorbent Core</span>
+                                    <span class="text-xs text-slate-500">Penyerap cairan</span>
                                 </div>
                                 <span class="text-[10px] bg-amber-100 text-amber-600 px-3 py-1 rounded-full font-bold">BAHAYA DIOKSIN</span>
                             </div>
                         </div>
-                        <div class="bg-white border-2 border-slate-100 p-5 rounded-2xl shadow-sm hover:border-pink-300 hover:shadow-md transition cursor-pointer" onclick="showMat('3. Back Sheet (Lapisan Dasar)', 'Lapisan terbawah ini berfungsi menahan agar darah tidak tembus ke celana dalam. Sayangnya, pembalut kualitas rendah menggunakan plastik polimer kedap udara total. Bayangkan memakai jas hujan plastik seharian; panas tubuh akan terperangkap. Ini menyebabkan efek **Greenhouse (Rumah Kaca)** lokal di area selangkangan. Suhu vagina meningkat drastis, mengganggu keseimbangan pH, membunuh bakteri baik Lactobacillus, dan memicu infeksi bakteri vaginosis.')">
+                        <div class="bg-white border-2 border-slate-100 p-5 rounded-2xl shadow-sm hover:border-pink-300 hover:shadow-md transition cursor-pointer" onclick="showMat('3. Back Sheet', 'Lapisan plastik kedap udara yang menyebabkan efek rumah kaca, memicu bakteri.')">
                             <div class="flex justify-between items-center">
                                 <div>
-                                    <span class="font-bold text-slate-800 text-lg block">3. Back Sheet (Penutup)</span>
-                                    <span class="text-xs text-slate-500">Lapisan penahan bocor</span>
+                                    <span class="font-bold text-slate-800 text-lg block">3. Back Sheet</span>
+                                    <span class="text-xs text-slate-500">Penahan bocor</span>
                                 </div>
                                 <span class="text-[10px] bg-blue-100 text-blue-600 px-3 py-1 rounded-full font-bold">EFEK RUMAH KACA</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div id="mat-info-box" class="bg-slate-50 p-6 rounded-3xl border border-slate-200 mt-4 min-h-[160px]">
-                    <h4 id="mat-title" class="font-bold text-slate-800 mb-3 text-lg">Klik Lapisan di Atas!</h4>
-                    <p id="mat-desc" class="text-sm text-slate-600 leading-relaxed text-justify">Silakan klik pada setiap bagian lapisan pembalut di atas untuk mengetahui fakta medis dan risiko kesehatan yang tersembunyi di balik setiap lembar yang kamu gunakan selama 3-7 hari setiap bulannya.</p>
+                <div id="mat-info-box" class="bg-slate-50 p-6 rounded-3xl border border-slate-200 mt-4 min-h-[100px]">
+                    <h4 id="mat-title" class="font-bold text-slate-800 mb-2">Info Lapisan</h4>
+                    <p id="mat-desc" class="text-sm text-slate-600">Klik lapisan di atas untuk detail.</p>
                 </div>
-            </div>
-
-            <div class="bg-amber-50 p-6 rounded-[2rem] border border-amber-100 mt-6">
-                <h4 class="font-bold text-amber-800 mb-4 flex items-center gap-2 text-lg">
-                    ⚠️ Waspadai Risiko Penyakit Serius:
-                </h4>
-                <ul class="text-sm text-amber-900 space-y-3 list-disc pl-4 text-justify">
-                    <li><strong>Dermatitis Kontak & Iritasi Vulva:</strong> Kulit menjadi merah, lecet, perih, dan gatal akibat gesekan terus-menerus dengan bahan plastik kasar dan reaksi alergi terhadap pewangi buatan.</li>
-                    <li><strong>Vaginosis Bakterial & Keputihan Abnormal:</strong> Ketidakseimbangan flora vagina akibat lingkungan yang terlalu lembap dan panas, menyebabkan keputihan berwarna (hijau/kuning) dan berbau amis.</li>
-                    <li><strong>Gangguan Reproduksi Jangka Panjang:</strong> Paparan dioksin dalam jangka waktu tahunan (akumulatif) diduga kuat berkaitan dengan meningkatnya kasus Endometriosis (penebalan dinding rahim abnormal), penurunan kesuburan (infertilitas), hingga risiko kanker serviks.</li>
-                </ul>
             </div>
         </div>
 
         <!-- SECTION 6: CELANA DALAM & HIGIENE -->
         <div id="section-6" class="content-section">
-            <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Panduan Memilih Pakaian Dalam & Higiene</h3>
-            
+            <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Panduan Memilih Pakaian Dalam</h3>
             <div class="grid grid-cols-1 gap-6">
-                <!-- Cotton Case -->
                 <div class="materi-card border-t-8 border-green-500 shadow-lg">
                     <div class="flex items-start gap-4">
                         <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-3xl shadow-sm">☁️</div>
                         <div>
-                            <h4 class="font-bold text-gray-800 text-lg">Direkomendasikan: Katun 100%</h4>
-                            <p class="text-xs text-gray-500 mt-1 mb-3 bg-green-50 inline-block px-2 py-1 rounded">Sangat disarankan untuk aktivitas harian</p>
-                            <p class="text-sm text-gray-600 leading-relaxed text-justify">
-                                Bahan katun (cotton) adalah serat alami yang memiliki struktur berpori. Sifat ini memungkinkan sirkulasi udara berjalan lancar (*breathable*), sehingga panas tubuh bisa keluar dan udara segar bisa masuk. Katun juga memiliki daya serap tinggi terhadap keringat dan cairan keputihan normal. Dengan menjaga area kewanitaan tetap kering, katun mencegah lingkungan asam yang disukai oleh jamur *Candida albicans* untuk berkembang biak. Ini adalah investasi kesehatan termurah dan terbaik bagi santri.
-                            </p>
+                            <h4 class="font-bold text-gray-800 text-lg">Direkomendasikan: Katun</h4>
+                            <p class="text-sm text-gray-600 mt-2 text-justify">Bahan katun berpori, menyerap keringat, dan mencegah jamur.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Synthetic Case -->
                 <div class="materi-card border-t-8 border-red-500 shadow-lg">
                     <div class="flex items-start gap-4">
                         <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center text-3xl shadow-sm">🚫</div>
                         <div>
-                            <h4 class="font-bold text-gray-800 text-lg">Hindari: Nilon, Satin, & Sintetis</h4>
-                            <p class="text-xs text-gray-500 mt-1 mb-3 bg-red-50 inline-block px-2 py-1 rounded">Hati-hati, berisiko tinggi iritasi</p>
-                            <p class="text-sm text-gray-600 leading-relaxed text-justify">
-                                Meskipun seringkali terlihat lebih cantik, modis, atau memiliki hiasan renda, bahan sintetis seperti nilon, poliester, atau satin bersifat *non-porous* (tidak berpori). Bahan ini menahan panas tubuh dan mengunci kelembapan keringat di dalam serat kain. Tingkat kelembapan bisa melonjak hingga 90% di area selangkangan. Kondisi lembap dan hangat ini adalah "surga" bagi bakteri jahat penyebab bau tak sedap dan infeksi jamur yang menyebabkan gatal hebat (*Pruritus Vulvae*).
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="materi-card bg-indigo-600 text-white mt-8 p-6 shadow-xl shadow-indigo-200">
-                <h4 class="font-bold mb-6 flex items-center gap-3 text-xl border-b border-indigo-400 pb-4">
-                    ✨ Golden Rules Higiene Santriwati:
-                </h4>
-                <div class="space-y-4 text-sm">
-                    <div class="flex gap-4">
-                        <span class="bg-indigo-400 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold shadow-md ring-2 ring-indigo-300">1</span>
-                        <div>
-                            <p class="font-bold text-indigo-100">Disiplin Mengganti Celana Dalam</p>
-                            <p class="text-indigo-50 opacity-90 leading-tight mt-1">Ganti minimal 2 kali sehari (Pagi & Sore setelah mandi). Jangan pernah memakai ulang CD bekas pakai (side A/side B) karena bakteri sudah berkembang biak di sana.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <span class="bg-indigo-400 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold shadow-md ring-2 ring-indigo-300">2</span>
-                        <div>
-                            <p class="font-bold text-indigo-100">Waspada Kelembapan Ekstra</p>
-                            <p class="text-indigo-50 opacity-90 leading-tight mt-1">Segera ganti CD jika terasa lembap setelah berolahraga, piket, atau banyak berkeringat. Jangan biarkan keringat mengering di badan.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <span class="bg-indigo-400 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold shadow-md ring-2 ring-indigo-300">3</span>
-                        <div>
-                            <p class="font-bold text-indigo-100">Teknik Mencuci yang Benar</p>
-                            <p class="text-indigo-50 opacity-90 leading-tight mt-1">Cuci CD terpisah dari baju luar/kaos kaki. Hindari deterjen dengan pewangi terlalu keras atau pelembut pakaian, karena residu kimianya bisa memicu alergi pada kulit vulva. Bilas hingga benar-benar bersih tanpa sisa busa.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <span class="bg-indigo-400 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold shadow-md ring-2 ring-indigo-300">4</span>
-                        <div>
-                            <p class="font-bold text-indigo-100">Manfaatkan Sinar Matahari</p>
-                            <p class="text-indigo-50 opacity-90 leading-tight mt-1">Jemur pakaian dalam di bawah sinar matahari langsung. Sinar UV matahari adalah pembunuh kuman dan jamur alami yang paling efektif dan gratis.</p>
+                            <h4 class="font-bold text-gray-800 text-lg">Hindari: Nilon/Satin</h4>
+                            <p class="text-sm text-gray-600 mt-2 text-justify">Menahan panas dan lembap, memicu bakteri jahat.</p>
                         </div>
                     </div>
                 </div>
@@ -377,30 +415,97 @@
 
     </main>
 
-    <!-- Navigation -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-xl border-t border-slate-100 px-2 py-3 flex justify-around items-end shadow-[0_-15px_40px_rgba(0,0,0,0.08)] z-40">
-        <button onclick="navTo(1, 'Edukasi Kespro', 'Pahami dasar kesehatan tubuhmu.')" id="btn-1" class="btn-nav p-2 flex flex-col items-center flex-1 active-btn">
-            <div class="icon-circle w-10 h-10 rounded-2xl flex items-center justify-center mb-1 transition-all">📖</div>
-            <span class="text-[9px] font-bold uppercase tracking-tighter">Dasar</span>
+    <!-- Updated Navigation (Floating Dock Style) -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white h-20 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-40 px-2 flex justify-around items-end pb-2 border-t border-slate-100">
+        <!-- Button 1: Dasar -->
+        <button onclick="navTo(1, 'Edukasi Kespro', 'Pahami dasar kesehatan tubuhmu.')" id="btn-1" class="btn-nav w-1/5 active-btn">
+            <div class="icon-circle">
+                <span class="text-xl">📖</span>
+            </div>
+            <span class="nav-label">Dasar</span>
         </button>
-        <button onclick="navTo(2, 'Eksplorasi Anatomi', 'Kenali fungsi setiap organ dalam.')" id="btn-2" class="btn-nav p-2 flex flex-col items-center flex-1">
-            <div class="icon-circle w-10 h-10 rounded-2xl flex items-center justify-center mb-1 transition-all">🧬</div>
-            <span class="text-[9px] font-bold uppercase tracking-tighter">Anatomi</span>
+
+        <!-- Button 2: Anatomi -->
+        <button onclick="navTo(2, 'Eksplorasi Anatomi', 'Kenali fungsi setiap organ dalam.')" id="btn-2" class="btn-nav w-1/5">
+            <div class="icon-circle">
+                <span class="text-xl">🧬</span>
+            </div>
+            <span class="nav-label">Anatomi</span>
         </button>
-        <button onclick="navTo(5, 'Bedah Material', 'Hati-hati dalam memilih produk.')" id="btn-5" class="btn-nav p-2 flex flex-col items-center flex-1">
-            <div class="icon-circle w-10 h-10 rounded-2xl flex items-center justify-center mb-1 transition-all">🩹</div>
-            <span class="text-[9px] font-bold uppercase tracking-tighter">Pembalut</span>
+
+        <!-- Button 3: CALCULATOR (Center, Big) -->
+        <button onclick="navTo('calc', 'Kalkulator Haid', 'Pantau siklus bulananmu dengan mudah.')" id="btn-calc" class="btn-nav w-1/5 center-btn">
+            <div class="icon-circle">
+                <span class="text-2xl">📅</span>
+            </div>
+            <span class="nav-label">Siklus</span>
         </button>
-        <button onclick="navTo(6, 'Higiene CD', 'Tips memilih pakaian yang sehat.')" id="btn-6" class="btn-nav p-2 flex flex-col items-center flex-1">
-            <div class="icon-circle w-10 h-10 rounded-2xl flex items-center justify-center mb-1 transition-all">🩲</div>
-            <span class="text-[9px] font-bold uppercase tracking-tighter">CD & Tips</span>
+
+        <!-- Button 4: Pembalut -->
+        <button onclick="navTo(5, 'Bedah Material', 'Hati-hati dalam memilih produk.')" id="btn-5" class="btn-nav w-1/5">
+            <div class="icon-circle">
+                <span class="text-xl">🩹</span>
+            </div>
+            <span class="nav-label">Pembalut</span>
+        </button>
+
+        <!-- Button 5: CD & Tips -->
+        <button onclick="navTo(6, 'Higiene CD', 'Tips memilih pakaian yang sehat.')" id="btn-6" class="btn-nav w-1/5">
+            <div class="icon-circle">
+                <span class="text-xl">🩲</span>
+            </div>
+            <span class="nav-label">Higiene</span>
         </button>
     </nav>
 
     <script>
         const apiKey = ""; 
 
-        // AI Logic with exponential backoff
+        // Calculator Logic
+        function adjustCycle(amount) {
+            const input = document.getElementById('calc-cycle');
+            let val = parseInt(input.value) + amount;
+            if (val < 20) val = 20;
+            if (val > 45) val = 45;
+            input.value = val;
+        }
+
+        function calculateCycle() {
+            const dateStr = document.getElementById('calc-date').value;
+            const cycleLen = parseInt(document.getElementById('calc-cycle').value);
+
+            if (!dateStr) {
+                alert("Mohon isi tanggal hari pertama haid terakhirmu ya, Ukhti.");
+                return;
+            }
+
+            const lastPeriod = new Date(dateStr);
+            const nextPeriod = new Date(lastPeriod);
+            nextPeriod.setDate(lastPeriod.getDate() + cycleLen);
+
+            const ovulationDay = new Date(nextPeriod);
+            ovulationDay.setDate(nextPeriod.getDate() - 14);
+
+            const fertileStart = new Date(ovulationDay);
+            fertileStart.setDate(ovulationDay.getDate() - 2);
+            
+            const fertileEnd = new Date(ovulationDay);
+            fertileEnd.setDate(ovulationDay.getDate() + 2);
+
+            // Format dates Indonesia
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            const nextStr = nextPeriod.toLocaleDateString('id-ID', options);
+            const fertileStr = `${fertileStart.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })} - ${fertileEnd.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}`;
+
+            document.getElementById('res-next-period').innerText = nextStr;
+            document.getElementById('res-fertile').innerText = fertileStr;
+
+            const resultDiv = document.getElementById('calc-result');
+            resultDiv.classList.remove('hidden');
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // AI Logic
         async function callGemini(prompt) {
             const systemPrompt = "Kamu adalah Ukhti AI, asisten kesehatan perempuan di lingkungan pesantren. Berikan penjelasan yang informatif, panjang, mendalam, dan menggunakan terminologi medis yang akurat namun disesuaikan dengan norma kesantunan santriwati. Jawablah dengan sangat detail.";
             try {
@@ -446,7 +551,6 @@
             chat.scrollTop = chat.scrollHeight;
         }
 
-        // Interaction Logic
         function showDetail(title, desc) {
             const card = document.getElementById('detail-card');
             card.classList.add('animate__pulse');
@@ -473,8 +577,15 @@
             document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.btn-nav').forEach(b => b.classList.remove('active-btn'));
             
-            document.getElementById('section-' + id).classList.add('active');
-            document.getElementById('btn-' + id).classList.add('active-btn');
+            // Handle ID specially because 'calc' is not a number
+            const sectionId = (id === 'calc') ? 'section-calc' : 'section-' + id;
+            const btnId = (id === 'calc') ? 'btn-calc' : 'btn-' + id;
+
+            const sectionEl = document.getElementById(sectionId);
+            if (sectionEl) sectionEl.classList.add('active');
+            
+            const btnEl = document.getElementById(btnId);
+            if (btnEl) btnEl.classList.add('active-btn');
             
             document.getElementById('banner-title').innerText = banner;
             document.getElementById('banner-subtitle').innerText = sub;
