@@ -104,6 +104,26 @@
             color: #db2777;
         }
 
+        /* Timeline Styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            padding-bottom: 2rem;
+            border-left: 2px solid #e5e7eb;
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
         /* Chat Styles */
         #ai-chat-window {
             display: none;
@@ -273,6 +293,7 @@
 
             <!-- Result Box (Hidden by default) -->
             <div id="calc-result" class="hidden animate__animated animate__fadeInUp">
+                <!-- Main Result -->
                 <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl p-6 text-white shadow-lg relative overflow-hidden mb-6">
                     <div class="relative z-10">
                         <p class="text-indigo-100 text-sm font-medium mb-1">Perkiraan Haid Berikutnya</p>
@@ -284,19 +305,74 @@
                                 <span class="font-bold text-sm">Masa Subur (Ovulasi)</span>
                             </div>
                             <p id="res-fertile" class="text-sm opacity-90">-- s/d --</p>
-                            <p class="text-[10px] mt-2 opacity-75 italic">*Hanya perkiraan, bukan alat kontrasepsi.</p>
                         </div>
                     </div>
                     <!-- Decoration -->
                     <div class="absolute -right-6 -top-6 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
                 </div>
 
-                <div class="materi-card">
-                    <h4 class="font-bold text-gray-800 mb-3">Apa artinya?</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed text-justify">
-                        Mengetahui siklus haid membantu santriwati memprediksi kapan masa suci (untuk sholat/puasa) dan masa udzur datang. Jika haidmu sering terlambat lebih dari 35 hari atau lebih cepat dari 21 hari, konsultasikan ke dokter atau tanya Ukhti AI untuk info lebih lanjut.
-                    </p>
+                <!-- Intro Text -->
+                <div class="mb-6 p-4 bg-yellow-50 rounded-2xl border border-yellow-100 text-sm text-yellow-800 leading-relaxed text-justify">
+                    <strong>Penting Diketahui:</strong> Siklus menstruasi adalah proses bulanan alami yang diatur hormon, umumnya 21-35 hari. Melibatkan 4 fase utama dengan perubahan hormon (Estrogen & Progesteron) yang memengaruhi tubuh dan emosi.
                 </div>
+
+                <!-- TIMELINE -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                    <h4 class="font-bold text-gray-800 mb-6 flex items-center gap-2">
+                        <span class="bg-rose-100 p-1.5 rounded-lg text-rose-500">📊</span>
+                        Perjalanan Siklusmu
+                    </h4>
+                    
+                    <div class="pl-2">
+                        <!-- Phase 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot bg-red-500"></div>
+                            <h5 class="font-bold text-red-500 text-lg">Fase Menstruasi</h5>
+                            <span id="date-phase-1" class="text-xs font-bold bg-red-50 text-red-600 px-2 py-1 rounded-md mb-2 inline-block">Tanggal: ...</span>
+                            <div class="bg-red-50 rounded-xl p-4 text-sm text-gray-700 leading-relaxed">
+                                <p class="mb-2"><strong>Hari 1-7:</strong> Dimulai saat hari pertama haid. Lapisan dinding rahim (endometrium) yang menebal meluruh keluar bersama darah dan jaringan.</p>
+                            </div>
+                        </div>
+
+                        <!-- Phase 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot bg-blue-500"></div>
+                            <h5 class="font-bold text-blue-500 text-lg">Fase Folikuler</h5>
+                            <span id="date-phase-2" class="text-xs font-bold bg-blue-50 text-blue-600 px-2 py-1 rounded-md mb-2 inline-block">Tanggal: ...</span>
+                            <div class="bg-blue-50 rounded-xl p-4 text-sm text-gray-700 leading-relaxed">
+                                <p class="mb-2"><strong>Setelah menstruasi hingga ovulasi:</strong> Hipotalamus merangsang ovarium membentuk folikel. Hormon estrogen mulai naik, menyebabkan dinding rahim menebal kembali (persiapan).</p>
+                            </div>
+                        </div>
+
+                        <!-- Phase 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot bg-pink-500"></div>
+                            <h5 class="font-bold text-pink-500 text-lg">Fase Ovulasi (Subur)</h5>
+                            <span id="date-phase-3" class="text-xs font-bold bg-pink-50 text-pink-600 px-2 py-1 rounded-md mb-2 inline-block">Tanggal: ...</span>
+                            <div class="bg-pink-50 rounded-xl p-4 text-sm text-gray-700 leading-relaxed">
+                                <p class="mb-2"><strong>~2 Minggu sebelum haid berikutnya:</strong> Folikel pecah, melepaskan sel telur matang ke tuba falopi. Ini adalah puncak masa subur.</p>
+                            </div>
+                        </div>
+
+                        <!-- Phase 4 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot bg-purple-500"></div>
+                            <h5 class="font-bold text-purple-500 text-lg">Fase Luteal</h5>
+                            <span id="date-phase-4" class="text-xs font-bold bg-purple-50 text-purple-600 px-2 py-1 rounded-md mb-2 inline-block">Tanggal: ...</span>
+                            <div class="bg-purple-50 rounded-xl p-4 text-sm text-gray-700 leading-relaxed">
+                                <p class="mb-2"><strong>Setelah ovulasi hingga haid:</strong> Korpus luteum memproduksi Progesteron agar rahim siap. Jika tidak ada pembuahan, hormon turun dan siklus berulang (Haid).</p>
+                                <p class="text-xs text-purple-700 mt-2 bg-purple-100 p-2 rounded">
+                                    <em>Note: Fase ini sering memicu gejala PMS (Premenstrual Syndrome) karena perubahan hormon.</em>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <p class="text-xs text-gray-400 italic">Data di atas adalah estimasi medis umum. Setiap tubuh perempuan unik dan bisa berbeda.</p>
+                </div>
+
             </div>
         </div>
 
@@ -479,9 +555,11 @@
                 return;
             }
 
-            const lastPeriod = new Date(dateStr);
-            const nextPeriod = new Date(lastPeriod);
-            nextPeriod.setDate(lastPeriod.getDate() + cycleLen);
+            const hpht = new Date(dateStr);
+            
+            // 1. Calculate Main Dates
+            const nextPeriod = new Date(hpht);
+            nextPeriod.setDate(hpht.getDate() + cycleLen);
 
             const ovulationDay = new Date(nextPeriod);
             ovulationDay.setDate(nextPeriod.getDate() - 14);
@@ -492,7 +570,7 @@
             const fertileEnd = new Date(ovulationDay);
             fertileEnd.setDate(ovulationDay.getDate() + 2);
 
-            // Format dates Indonesia
+            // 2. Format Display Text (Main Result)
             const options = { day: 'numeric', month: 'long', year: 'numeric' };
             const nextStr = nextPeriod.toLocaleDateString('id-ID', options);
             const fertileStr = `${fertileStart.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })} - ${fertileEnd.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' })}`;
@@ -500,6 +578,32 @@
             document.getElementById('res-next-period').innerText = nextStr;
             document.getElementById('res-fertile').innerText = fertileStr;
 
+            // 3. PHASE CALCULATION & INJECTION
+            
+            // Phase 1: Menstruasi (HPHT s/d +6 hari)
+            const p1End = new Date(hpht);
+            p1End.setDate(hpht.getDate() + 6);
+            document.getElementById('date-phase-1').innerText = `${hpht.toLocaleDateString('id-ID', {day: 'numeric', month:'short'})} - ${p1End.toLocaleDateString('id-ID', {day: 'numeric', month:'short'})}`;
+
+            // Phase 2: Folikuler (Setelah haid s/d sebelum ovulasi)
+            const p2Start = new Date(p1End);
+            p2Start.setDate(p1End.getDate() + 1);
+            const p2End = new Date(ovulationDay);
+            p2End.setDate(ovulationDay.getDate() - 1);
+            document.getElementById('date-phase-2').innerText = `${p2Start.toLocaleDateString('id-ID', {day: 'numeric', month:'short'})} - ${p2End.toLocaleDateString('id-ID', {day: 'numeric', month:'short'})}`;
+
+            // Phase 3: Ovulasi (Sekitar hari H ovulasi)
+            // Kita tampilkan hari H ovulasi itu sendiri
+            document.getElementById('date-phase-3').innerText = `${ovulationDay.toLocaleDateString('id-ID', {day: 'numeric', month:'long'})}`;
+
+            // Phase 4: Luteal (Setelah ovulasi s/d sebelum haid berikutnya)
+            const p4Start = new Date(ovulationDay);
+            p4Start.setDate(ovulationDay.getDate() + 1);
+            const p4End = new Date(nextPeriod);
+            p4End.setDate(nextPeriod.getDate() - 1);
+            document.getElementById('date-phase-4').innerText = `${p4Start.toLocaleDateString('id-ID', {day: 'numeric', month:'short'})} - ${p4End.toLocaleDateString('id-ID', {day: 'numeric', month:'short'})}`;
+
+            // Show Result
             const resultDiv = document.getElementById('calc-result');
             resultDiv.classList.remove('hidden');
             resultDiv.scrollIntoView({ behavior: 'smooth' });
