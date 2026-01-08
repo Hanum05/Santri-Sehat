@@ -1232,9 +1232,26 @@
     <script>
         const apiKey = ""; 
 
+        // Initialize Theme (Jalankan saat web dimuat untuk cek simpanan mode)
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            // Hanya aktifkan dark mode jika tersimpan 'dark', jika null (pengguna baru) atau 'light', biarkan default (terang)
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+
         // Dark Mode Logic
         function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
+            const html = document.documentElement;
+            html.classList.toggle('dark');
+            
+            // Simpan preferensi pengguna ke LocalStorage
+            if (html.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
         }
 
         // Font Size Logic
