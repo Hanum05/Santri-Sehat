@@ -1068,40 +1068,42 @@
                 </div>
             </div>
 
-            <!-- Block Baru 5: Apa Itu Darah Istihadhah (Updated Layout: White Outer + Colored Inner) -->
+            <!-- Block Baru 5: Apa Itu Darah Istihadhah (Updated Layout: Fixed #FAFAD8 & Top Alignment) -->
             <div class="mt-8 rounded-[2rem] shadow-lg transition-colors duration-300 bg-white dark:bg-slate-800 p-6 md:p-8 border border-slate-100 dark:border-slate-700">
                 <!-- Judul Utama (Pindah ke Block Putih, Rata Tengah) -->
                 <h4 class="font-bold text-2xl md:text-3xl mb-6 text-center text-gray-800 dark:text-white leading-tight">
                     Apa Itu Darah Istihadhah?
                 </h4>
 
-                <!-- Inner Block: Konten dengan Background #FAFAD8 -->
-                <div class="rounded-2xl overflow-hidden bg-[#FAFAD8] dark:bg-[#4a4b2a]">
-                    <div class="flex flex-col md:flex-row h-full">
+                <!-- Inner Block: Konten dengan Background #FAFAD8 (Warna Tetap di Mode Gelap) -->
+                <!-- P-6 md:p-8 memberikan space antara garis kotak dan isinya -->
+                <div class="rounded-2xl overflow-hidden bg-[#FAFAD8] p-6 md:p-8 border border-yellow-200/50">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start"> <!-- items-start agar rata atas -->
                         <!-- Bagian Kiri: Gambar Clean -->
-                        <div class="w-full md:w-5/12 flex items-center justify-center p-4 md:p-0">
-                            <img src="Darah_Istihadhah.png" alt="Darah Istihadhah" class="w-auto h-auto max-h-[250px] md:max-h-[350px] object-contain drop-shadow-sm" onerror="this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-48 text-[#2B2B2B] dark:text-white p-4 text-center w-full\'><span class=\'text-2xl mb-2\'>🩸</span><strong>File Tidak Ditemukan</strong><span class=\'text-xs\'>Pastikan file <code>Darah_Istihadhah.png</code> ada</span></div>'">
+                        <div class="w-full md:w-5/12 flex justify-center md:justify-start shrink-0">
+                            <!-- Aspect ratio diatur sesuai dimensi asli 713x1175 -->
+                            <img src="Darah_Istihadhah.png" alt="Darah Istihadhah" class="w-full h-auto object-contain drop-shadow-sm rounded-lg" style="aspect-ratio: 713/1175;" onerror="this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-64 text-[#2B2B2B] bg-white/50 rounded-xl p-4 text-center w-full border-2 border-dashed border-gray-300\'><span class=\'text-3xl mb-2\'>🩸</span><strong>File Tidak Ditemukan</strong><span class=\'text-xs mt-1\'>Darah_Istihadhah.png<br>(713x1175)</span></div>'">
                         </div>
                         
-                        <!-- Bagian Kanan: Teks Penjelasan -->
-                        <div class="w-full md:w-7/12 p-6 md:py-8 md:pr-8 flex flex-col justify-center">
-                            
-                            <ul class="space-y-2 text-[#2B2B2B] dark:text-gray-100 text-sm md:text-[0.9rem] leading-snug">
-                                <li class="flex gap-2 items-start">
-                                    <span class="mt-1 shrink-0 font-bold">•</span>
-                                    <span>Darah yang keluar dalam rentang waktu yang relatif lama, yakni <span style="color: #C62828;" class="font-bold dark:text-red-400">melebihi kebiasaan lama haid</span>.</span>
+                        <!-- Bagian Kanan: Teks Penjelasan (Rata Atas) -->
+                        <div class="w-full md:w-7/12">
+                            <!-- Warna Teks dipaksa #2B2B2B agar kontras dengan background krem -->
+                            <ul class="space-y-3 text-[#2B2B2B] text-sm md:text-base leading-relaxed">
+                                <li class="flex gap-3 items-start">
+                                    <span class="mt-1.5 shrink-0 font-bold text-black">•</span>
+                                    <span>Darah yang keluar dalam rentang waktu yang relatif lama, yakni <span style="color: #C62828;" class="font-bold">melebihi kebiasaan lama haid</span>.</span>
                                 </li>
-                                <li class="flex gap-2 items-start">
-                                    <span class="mt-1 shrink-0 font-bold">•</span>
-                                    <span>Penyebab keluarnya darah adalah karena <span style="color: #C62828;" class="font-bold dark:text-red-400">gangguan atau penyakit</span>.</span>
+                                <li class="flex gap-3 items-start">
+                                    <span class="mt-1.5 shrink-0 font-bold text-black">•</span>
+                                    <span>Penyebab keluarnya darah adalah karena <span style="color: #C62828;" class="font-bold">gangguan atau penyakit</span>.</span>
                                 </li>
-                                <li class="flex gap-2 items-start">
-                                    <span class="mt-1 shrink-0 font-bold">•</span>
-                                    <span>Tidak <span style="color: #C62828;" class="font-bold dark:text-red-400">memenuhi ciri dan syarat</span> darah haid atau darah nifas.</span>
+                                <li class="flex gap-3 items-start">
+                                    <span class="mt-1.5 shrink-0 font-bold text-black">•</span>
+                                    <span>Tidak <span style="color: #C62828;" class="font-bold">memenuhi ciri dan syarat</span> darah haid atau darah nifas.</span>
                                 </li>
-                                <li class="flex gap-2 items-start">
-                                    <span class="mt-1 shrink-0 font-bold">•</span>
-                                    <span>Perempuan yang istihadhah <span style="color: #C62828;" class="font-bold dark:text-red-400">tetap wajib salat dan puasa Ramadan</span>, juga boleh membaca Al-Qur’an dan melakukan hal-hal yang diharamkan ketika haid dan nifas lainnya.</span>
+                                <li class="flex gap-3 items-start">
+                                    <span class="mt-1.5 shrink-0 font-bold text-black">•</span>
+                                    <span>Perempuan yang istihadhah <span style="color: #C62828;" class="font-bold">tetap wajib salat dan puasa Ramadan</span>, juga boleh membaca Al-Qur’an dan melakukan hal-hal yang diharamkan ketika haid dan nifas lainnya.</span>
                                 </li>
                             </ul>
                         </div>
