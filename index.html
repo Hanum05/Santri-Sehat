@@ -662,7 +662,7 @@
 
             <!-- Block Baru 2: Usai Haid (Design Baru: Pastel Clean) -->
             <div class="materi-card mt-8 p-0 overflow-hidden bg-[#FFF0F5] dark:bg-[#3d2b30] border-none shadow-md">
-                <div class="max-w-[650px] mx-auto py-12 px-4 sm:px-10 flex flex-col items-center">
+                <div class="max-w-[650px] mx-auto py-12 px-2 sm:px-10 flex flex-col items-center">
                     
                     <!-- 1. Judul Utama -->
                     <h2 class="font-['Caveat'] text-5xl md:text-6xl text-[#1a472a] dark:text-[#a3c9a8] mb-8 leading-tight pt-4 text-center">
@@ -670,60 +670,63 @@
                     </h2>
 
                     <!-- 2 & 3. Layout Split: Kiri (Judul) & Kanan (List) -->
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-8 w-full">
+                    <!-- UBAH: Pakai flex-row di semua ukuran layar, atur gap lebih kecil di HP -->
+                    <div class="flex flex-row items-center justify-center gap-4 md:gap-10 mb-8 w-full">
                         
                         <!-- Sisi Kiri: Judul Tanda Suci -->
                         <div class="flex flex-col items-center justify-center text-center shrink-0">
-                            <span class="text-[#d97706] dark:text-[#fbbf24] font-bold text-3xl md:text-4xl leading-tight">
+                            <span class="text-[#d97706] dark:text-[#fbbf24] font-bold text-xl md:text-4xl leading-tight">
                                 Tanda Suci
                             </span>
-                            <span class="text-[#1a472a] dark:text-[#a3c9a8] font-bold text-2xl md:text-3xl leading-tight">
+                            <span class="text-[#1a472a] dark:text-[#a3c9a8] font-bold text-lg md:text-3xl leading-tight">
                                 Dari Haid
                             </span>
                         </div>
 
-                        <!-- Garis Pemisah Vertical (Opsional, untuk estetika di desktop) -->
+                        <!-- Garis Pemisah Vertical (Tetap hidden di mobile biar rapi, muncul di desktop) -->
                         <div class="hidden md:block w-px h-16 bg-[#1a472a]/20 dark:bg-white/20"></div>
 
                         <!-- Sisi Kanan: Daftar Point -->
-                        <ul class="text-[#1a472a] dark:text-[#a3c9a8] font-medium text-lg space-y-2 list-disc pl-5 md:pl-0">
+                        <ul class="text-[#1a472a] dark:text-[#a3c9a8] font-medium text-sm md:text-lg space-y-2 list-disc pl-4 md:pl-0">
                             <li class="pl-1">Jufuf (Kering)</li>
                             <li class="pl-1">Qoshotul Baidho (cairan putih/bening)</li>
                         </ul>
                     </div>
 
                     <!-- 4. Teks Penjelasan Kecil -->
-                    <p class="text-gray-500 dark:text-gray-400 text-sm text-center max-w-sm mb-12 leading-relaxed">
+                    <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm text-center max-w-sm mb-12 leading-relaxed px-4">
                         Jika sudah muncul salah satu dari keduanya, maka telah dianggap suci haid.
                     </p>
 
                     <!-- 5 & 6. Layout Split: Cek Waktu (Kiri) & List (Kanan) -->
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-16 w-full">
+                    <!-- UBAH: Pakai flex-row di semua ukuran layar -->
+                    <div class="flex flex-row items-center justify-center gap-3 md:gap-12 mb-16 w-full px-2">
                         
                         <!-- Sisi Kiri: Layout Custom -->
                         <div class="flex gap-0 shrink-0 items-start">
                             <!-- Kolom: Cek pada + 3 (Rata Kiri) -->
                             <div class="flex flex-col items-start">
                                 <!-- Cek pada: Diturunkan mendekati angka 3 -->
-                                <span class="text-[#1a472a] dark:text-[#a3c9a8] text-lg font-bold uppercase tracking-wider leading-tight mb-[-15px] z-10">
+                                <span class="text-[#1a472a] dark:text-[#a3c9a8] text-xs md:text-lg font-bold uppercase tracking-wider leading-tight mb-[-10px] md:mb-[-15px] z-10">
                                     Cek pada
                                 </span>
-                                <span class="font-['Caveat'] text-8xl text-[#d97706] dark:text-[#fbbf24] leading-none -ml-1">
+                                <!-- Angka 3: Ukuran disesuaikan untuk mobile (text-6xl) dan desktop (text-8xl) -->
+                                <span class="font-['Caveat'] text-6xl md:text-8xl text-[#d97706] dark:text-[#fbbf24] leading-none -ml-1">
                                     3
                                 </span>
                             </div>
                             
-                            <!-- Waktu! (Ditarik mundur lebih jauh dengan -ml-8 agar dempet) -->
-                            <span class="text-[#1a472a] dark:text-[#a3c9a8] font-bold uppercase tracking-wider leading-tight text-2xl md:text-3xl mt-9 -ml-8 text-left">
+                            <!-- Waktu! (Ditarik mundur, ukuran disesuaikan mobile/desktop) -->
+                            <span class="text-[#1a472a] dark:text-[#a3c9a8] font-bold uppercase tracking-wider leading-tight text-lg md:text-3xl mt-7 md:mt-9 -ml-6 md:-ml-8 text-left">
                                 Waktu!
                             </span>
                         </div>
 
-                        <!-- Garis Pemisah Vertical (Opsional, untuk estetika di desktop) -->
+                        <!-- Garis Pemisah Vertical -->
                         <div class="hidden md:block w-px h-24 bg-[#1a472a]/20 dark:bg-white/20"></div>
 
                         <!-- Sisi Kanan: Daftar Waktu -->
-                        <ol class="text-[#1a472a] dark:text-[#a3c9a8] font-medium text-lg space-y-3 list-decimal pl-5 md:pl-0">
+                        <ol class="text-[#1a472a] dark:text-[#a3c9a8] font-medium text-sm md:text-lg space-y-2 md:space-y-3 list-decimal pl-4 md:pl-0">
                             <li class="pl-2">Setiap akhir waktu sholat</li>
                             <li class="pl-2">Hendak tidur malam</li>
                             <li class="pl-2">Menjelang kebiasaan suci</li>
@@ -731,25 +734,25 @@
                     </div>
 
                     <!-- 7. Bagian Penting -->
-                    <div class="w-full text-left self-start border-t-2 border-dashed border-[#1a472a]/20 dark:border-white/10 pt-10">
-                        <h4 class="text-[#d97706] dark:text-[#fbbf24] font-bold text-xl mb-6 tracking-wide uppercase">
+                    <div class="w-full text-left self-start border-t-2 border-dashed border-[#1a472a]/20 dark:border-white/10 pt-10 px-4">
+                        <h4 class="text-[#d97706] dark:text-[#fbbf24] font-bold text-lg md:text-xl mb-6 tracking-wide uppercase">
                             PENTING! CARA NGECEK HAID:
                         </h4>
-                        <ul class="space-y-4 text-[#1a472a] dark:text-[#a3c9a8] text-[0.95rem] leading-relaxed">
-                            <li class="flex items-start gap-4">
-                                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#1a472a] dark:bg-[#a3c9a8] shrink-0"></span>
+                        <ul class="space-y-4 text-[#1a472a] dark:text-[#a3c9a8] text-sm md:text-[0.95rem] leading-relaxed">
+                            <li class="flex items-start gap-3 md:gap-4">
+                                <span class="mt-1.5 md:mt-2 w-1.5 h-1.5 rounded-full bg-[#1a472a] dark:bg-[#a3c9a8] shrink-0"></span>
                                 <span>Tempelkan <strong>kapas atau tisu</strong> ke farji (kemaluan) bagian luar, sambil <strong>jongkok</strong>.</span>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#1a472a] dark:bg-[#a3c9a8] shrink-0"></span>
+                            <li class="flex items-start gap-3 md:gap-4">
+                                <span class="mt-1.5 md:mt-2 w-1.5 h-1.5 rounded-full bg-[#1a472a] dark:bg-[#a3c9a8] shrink-0"></span>
                                 <span><strong>Harus melihat!</strong> Tidak bisa pakai perasaan.</span>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#1a472a] dark:bg-[#a3c9a8] shrink-0"></span>
+                            <li class="flex items-start gap-3 md:gap-4">
+                                <span class="mt-1.5 md:mt-2 w-1.5 h-1.5 rounded-full bg-[#1a472a] dark:bg-[#a3c9a8] shrink-0"></span>
                                 <span><strong>Tidak cukup</strong> hanya melihat di celana dalam.</span>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#1a472a] dark:bg-[#a3c9a8] shrink-0"></span>
+                            <li class="flex items-start gap-3 md:gap-4">
+                                <span class="mt-1.5 md:mt-2 w-1.5 h-1.5 rounded-full bg-[#1a472a] dark:bg-[#a3c9a8] shrink-0"></span>
                                 <span>Bila ada <strong>bercak</strong> (walau hanya keruh) berarti <strong>belum bersih/suci</strong>. Meskipun cairan itu tidak mengalir ke kemaluan bagian luar.</span>
                             </li>
                         </ul>
