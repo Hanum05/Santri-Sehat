@@ -1068,7 +1068,7 @@
                 </div>
             </div>
 
-            <!-- Block Baru 5: Apa Itu Darah Istihadhah (Updated Layout: Fixed #FAFAD8 & Top Alignment) -->
+            <!-- Block Baru 5: Apa Itu Darah Istihadhah (Updated Layout: 16:9 Ratio on Desktop) -->
             <div class="mt-8 rounded-[2rem] shadow-lg transition-colors duration-300 bg-white dark:bg-slate-800 p-6 md:p-8 border border-slate-100 dark:border-slate-700">
                 <!-- Judul Utama (Pindah ke Block Putih, Rata Tengah) -->
                 <h4 class="font-bold text-2xl md:text-3xl mb-6 text-center text-gray-800 dark:text-white leading-tight">
@@ -1077,16 +1077,18 @@
 
                 <!-- Inner Block: Konten dengan Background #FAFAD8 (Warna Tetap di Mode Gelap) -->
                 <!-- P-6 md:p-8 memberikan space antara garis kotak dan isinya -->
-                <div class="rounded-2xl overflow-hidden bg-[#FAFAD8] p-6 md:p-8 border border-yellow-200/50">
-                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start"> <!-- items-start agar rata atas -->
+                <!-- Added md:aspect-video to force 16:9 ratio on desktop -->
+                <div class="rounded-2xl overflow-hidden bg-[#FAFAD8] p-6 md:p-8 border border-yellow-200/50 md:aspect-video flex flex-col justify-center">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start md:h-full"> <!-- items-start agar rata atas, md:h-full agar mengisi 16:9 -->
                         <!-- Bagian Kiri: Gambar Clean -->
-                        <div class="w-full md:w-5/12 flex justify-center md:justify-start shrink-0">
-                            <!-- Aspect ratio diatur sesuai dimensi asli 713x1175 -->
-                            <img src="Darah_Istihadhah.png" alt="Darah Istihadhah" class="w-full h-auto object-contain drop-shadow-sm rounded-lg" style="aspect-ratio: 713/1175;" onerror="this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-64 text-[#2B2B2B] bg-white/50 rounded-xl p-4 text-center w-full border-2 border-dashed border-gray-300\'><span class=\'text-3xl mb-2\'>🩸</span><strong>File Tidak Ditemukan</strong><span class=\'text-xs mt-1\'>Darah_Istihadhah.png<br>(713x1175)</span></div>'">
+                        <div class="w-full md:w-5/12 flex justify-center md:justify-center shrink-0 md:h-full">
+                            <!-- Image scaled to fit height of container (16:9) to prevent overflow -->
+                            <img src="Darah_Istihadhah.png" alt="Darah Istihadhah" class="w-auto h-auto max-h-[300px] md:max-h-full object-contain drop-shadow-sm rounded-lg" onerror="this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-full w-full text-[#2B2B2B] bg-white/50 rounded-xl p-4 text-center border-2 border-dashed border-gray-300\'><span class=\'text-3xl mb-2\'>🩸</span><strong>File Tidak Ditemukan</strong><span class=\'text-xs mt-1\'>Darah_Istihadhah.png<br>(713x1175)</span></div>'">
                         </div>
                         
                         <!-- Bagian Kanan: Teks Penjelasan (Rata Atas) -->
-                        <div class="w-full md:w-7/12">
+                        <!-- Added overflow-y-auto just in case text overflows 16:9 box on some screens -->
+                        <div class="w-full md:w-7/12 md:h-full md:overflow-y-auto custom-scrollbar">
                             <!-- Warna Teks dipaksa #2B2B2B agar kontras dengan background krem -->
                             <ul class="space-y-3 text-[#2B2B2B] text-sm md:text-base leading-relaxed">
                                 <li class="flex gap-3 items-start">
