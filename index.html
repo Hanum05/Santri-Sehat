@@ -25,9 +25,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
         
-        /* Set default font size for rem scaling */
+        /* Set default font size for rem scaling (Diubah jadi 14px sesuai A-) */
         html {
-            font-size: 16px;
+            font-size: 14px;
             transition: font-size 0.3s ease;
         }
 
@@ -331,16 +331,16 @@
         <div class="mt-6 border-t border-gray-100 dark:border-slate-800 pt-6">
             <h4 class="font-bold text-gray-800 dark:text-white mb-3 text-sm">Ukuran Tampilan</h4>
             <div class="flex gap-2 bg-gray-100 dark:bg-slate-800 p-1.5 rounded-xl">
-                <!-- A- diturunkan ke 14px (Kecil) -->
-                <button onclick="changeFontSize(14, this)" class="font-btn flex-1 py-2 text-[10px] rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition font-bold">A-</button>
+                <!-- A- (14px) dijadikan Default Active -->
+                <button onclick="changeFontSize(14, this)" class="font-btn font-btn-active flex-1 py-2 text-[10px] rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition font-bold">A-</button>
                 
-                <!-- A standar 16px (Default Active) -->
-                <button onclick="changeFontSize(16, this)" class="font-btn font-btn-active flex-1 py-2 text-xs font-bold rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition">A</button>
+                <!-- A (16px) -->
+                <button onclick="changeFontSize(16, this)" class="font-btn flex-1 py-2 text-xs font-bold rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition">A</button>
                 
-                <!-- A+ naik ke 18px (Besar) -->
+                <!-- A+ (18px) -->
                 <button onclick="changeFontSize(18, this)" class="font-btn flex-1 py-2 text-sm font-bold rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition">A+</button>
                 
-                <!-- A++ naik ke 20px (Ekstra Besar) -->
+                <!-- A++ (20px) -->
                 <button onclick="changeFontSize(20, this)" class="font-btn flex-1 py-2 text-base font-bold rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition">A++</button>
             </div>
             <p class="text-[10px] text-gray-400 mt-2 text-center">Sesuaikan kenyamanan bacaanmu</p>
