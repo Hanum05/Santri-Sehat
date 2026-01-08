@@ -1066,6 +1066,49 @@
             </div>
         </div>
 
+        <!-- AI Chat Window -->
+        <div id="ai-chat-window" class="flex flex-col">
+            <div class="bg-pink-600 dark:bg-pink-800 p-6 flex justify-between items-center text-white rounded-t-[28px]">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-2xl flex items-center justify-center shadow-inner">✨</div>
+                    <div>
+                        <span class="font-bold block text-sm">Ukhti AI Konsultan</span>
+                        <span class="text-[10px] text-pink-100">Online & Confidential</span>
+                    </div>
+                </div>
+                <button onclick="toggleAIChat()" class="hover:rotate-90 transition-transform p-1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div id="chat-messages" class="flex-grow p-6 overflow-y-auto text-sm space-y-6 bg-slate-50 dark:bg-slate-800">
+                <div class="flex gap-3">
+                    <div class="w-8 h-8 bg-pink-100 dark:bg-pink-900 rounded-full flex-shrink-0 flex items-center justify-center text-xs">AI</div>
+                    <div class="bg-white dark:bg-slate-700 dark:text-slate-200 p-4 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 dark:border-slate-600 max-w-[85%] leading-relaxed">
+                        Assalamualaikum, Ukhti. Saya hadir untuk menemani belajarmu. Kamu bisa tanya apa saja secara anonim tentang kesehatan reproduksi, pubertas, atau keluhan kesehatan. InsyaAllah jawaban saya berbasis medis dan sopan. 
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <div class="w-8 h-8 bg-pink-100 dark:bg-pink-900 rounded-full flex-shrink-0 flex items-center justify-center text-xs">AI</div>
+                    <div class="bg-white dark:bg-slate-700 dark:text-slate-200 p-4 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 dark:border-slate-600 max-w-[85%] leading-relaxed">
+                        Maaf semuanya, karena AI ini masih tahap prototipe, kalian bisa kunjungi ke Gemini AI, insyaallah jawaban yang di berikan akan lebih akurat
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <div class="w-8 h-8 bg-pink-100 dark:bg-pink-900 rounded-full flex-shrink-0 flex items-center justify-center text-xs">AI</div>
+                    <div class="bg-white dark:bg-slate-700 dark:text-slate-200 p-4 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 dark:border-slate-600 max-w-[85%] leading-relaxed">
+                        Gemini AI<br>
+                        <a href="https://gemini.google.com/" target="_blank" class="text-pink-600 dark:text-pink-300 font-bold hover:underline">https://gemini.google.com/</a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800 border-t border-slate-100 dark:border-slate-700 flex gap-2">
+                <input type="text" id="user-input" placeholder="Tanyakan kegalauanmu..." class="flex-grow bg-slate-100 dark:bg-slate-700 dark:text-white rounded-2xl px-5 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-pink-300 transition-all">
+                <button onclick="sendMessage()" class="bg-pink-600 text-white rounded-2xl w-12 h-12 flex items-center justify-center shadow-lg shadow-pink-200 dark:shadow-none hover:scale-105 active:scale-95 transition">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+        </div>
+
     </main>
 
     <!-- Updated Navigation (Floating Dock Style) -->
