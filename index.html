@@ -990,7 +990,6 @@
                         <div class="grid grid-cols-2 gap-2 md:gap-4">
                             <!-- Kiri -->
                             <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border md:border-2 border-[#8B0000] dark:border-amber-700 rounded-xl md:rounded-2xl p-2 md:p-4 flex items-center justify-center text-center shadow-sm">
-                                <!-- UBAH: text-[10px] -> text-[0.625rem], text-[9px] -> text-[0.5625rem] -->
                                 <span class="font-bold text-black dark:text-gray-100 text-[0.625rem] md:text-base">Sebelum masuk waktu Subuh<br><span class="text-[0.5625rem] md:text-sm font-normal text-gray-700 dark:text-gray-400">(Masih dalam waktu Isya)</span></span>
                             </div>
                             <!-- Kanan -->
@@ -1069,11 +1068,44 @@
                 </div>
             </div>
 
-            <!-- Block Baru 5: Apa Itu Darah Istihadhah -->
-            <div class="materi-card mt-6">
-                <h4 class="font-bold text-gray-800 dark:text-white text-xl mb-6 text-center">Apa Itu Darah Istihadhah?</h4>
-                <div class="w-full flex justify-center bg-pink-50 dark:bg-slate-700/50 rounded-xl p-4">
-                    <img src="Apa_Darah_Istihadhah.png" alt="Apa Itu Darah Istihadhah?" class="w-full h-auto max-w-[720px] rounded-lg shadow-sm block" onerror="this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-48 text-pink-500 bg-pink-50 dark:bg-slate-800 p-4 text-center w-full\'><span class=\'text-2xl mb-2\'>🖼️</span><strong>File Tidak Ditemukan</strong><span class=\'text-xs\'>Pastikan file <code>Apa_Darah_Istihadhah.png</code> ada</span></div>'">
+            <!-- Block Baru 5: Apa Itu Darah Istihadhah (Updated Layout: White Outer + Colored Inner) -->
+            <div class="mt-8 rounded-[2rem] shadow-lg transition-colors duration-300 bg-white dark:bg-slate-800 p-6 md:p-8 border border-slate-100 dark:border-slate-700">
+                <!-- Judul Utama (Pindah ke Block Putih, Rata Tengah) -->
+                <h4 class="font-bold text-2xl md:text-3xl mb-6 text-center text-gray-800 dark:text-white leading-tight">
+                    Apa Itu Darah Istihadhah?
+                </h4>
+
+                <!-- Inner Block: Konten dengan Background #FAFAD8 -->
+                <div class="rounded-2xl overflow-hidden bg-[#FAFAD8] dark:bg-[#4a4b2a]">
+                    <div class="flex flex-col md:flex-row h-full">
+                        <!-- Bagian Kiri: Gambar Clean -->
+                        <div class="w-full md:w-5/12 flex items-center justify-center p-4 md:p-0">
+                            <img src="Darah_Istihadhah.png" alt="Darah Istihadhah" class="w-auto h-auto max-h-[250px] md:max-h-[350px] object-contain drop-shadow-sm" onerror="this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-48 text-[#2B2B2B] dark:text-white p-4 text-center w-full\'><span class=\'text-2xl mb-2\'>🩸</span><strong>File Tidak Ditemukan</strong><span class=\'text-xs\'>Pastikan file <code>Darah_Istihadhah.png</code> ada</span></div>'">
+                        </div>
+                        
+                        <!-- Bagian Kanan: Teks Penjelasan -->
+                        <div class="w-full md:w-7/12 p-6 md:py-8 md:pr-8 flex flex-col justify-center">
+                            
+                            <ul class="space-y-2 text-[#2B2B2B] dark:text-gray-100 text-sm md:text-[0.9rem] leading-snug">
+                                <li class="flex gap-2 items-start">
+                                    <span class="mt-1 shrink-0 font-bold">•</span>
+                                    <span>Darah yang keluar dalam rentang waktu yang relatif lama, yakni <span style="color: #C62828;" class="font-bold dark:text-red-400">melebihi kebiasaan lama haid</span>.</span>
+                                </li>
+                                <li class="flex gap-2 items-start">
+                                    <span class="mt-1 shrink-0 font-bold">•</span>
+                                    <span>Penyebab keluarnya darah adalah karena <span style="color: #C62828;" class="font-bold dark:text-red-400">gangguan atau penyakit</span>.</span>
+                                </li>
+                                <li class="flex gap-2 items-start">
+                                    <span class="mt-1 shrink-0 font-bold">•</span>
+                                    <span>Tidak <span style="color: #C62828;" class="font-bold dark:text-red-400">memenuhi ciri dan syarat</span> darah haid atau darah nifas.</span>
+                                </li>
+                                <li class="flex gap-2 items-start">
+                                    <span class="mt-1 shrink-0 font-bold">•</span>
+                                    <span>Perempuan yang istihadhah <span style="color: #C62828;" class="font-bold dark:text-red-400">tetap wajib salat dan puasa Ramadan</span>, juga boleh membaca Al-Qur’an dan melakukan hal-hal yang diharamkan ketika haid dan nifas lainnya.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
