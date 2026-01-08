@@ -444,9 +444,91 @@
 
             <!-- New Block: Panduan Warna -->
             <div class="materi-card border-t-8 border-rose-400 shadow-lg p-0 overflow-hidden mt-8">
-                <!-- Image 1: Warna Darah -->
-                <div class="w-full bg-[#F8D8DF] dark:bg-[#B84860] relative p-6 flex justify-center items-center transition-colors duration-300">
-                    <img src="Warna_Darah.png" alt="Panduan Warna Darah Haid" class="w-full h-auto max-w-[600px] object-contain drop-shadow-sm rounded-xl block" onerror="this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center h-48 text-rose-800 dark:text-rose-200 text-center\'><span class=\'text-2xl mb-2\'>🩸</span><strong>File Tidak Ditemukan</strong><span class=\'text-xs\'>Pastikan file <code>Warna_Darah.png</code> ada</span></div>'">
+                <!-- Bagian 1: Panduan Warna Menstruasi (Updated) -->
+                <div class="w-full bg-[#F8D8DF] dark:bg-[#B84860] relative p-6 transition-colors duration-300">
+                    
+                    <!-- Update Judul: SVG Curved Text (Melengkung 5%) -->
+                    <div class="flex justify-center mb-6 -mt-2">
+                        <svg viewBox="0 0 350 120" class="w-full max-w-[280px] md:max-w-[320px] h-auto overflow-visible">
+                            <defs>
+                                <!-- Path lengkung tipis (5%) -->
+                                <path id="curve1" d="M15,55 Q175,35 335,55" fill="transparent"/>
+                                <path id="curve2" d="M40,105 Q175,85 310,105" fill="transparent"/>
+                            </defs>
+                            <text style="fill: #941023; font-family: 'Caveat', cursive; font-weight: 700; font-size: 42px; letter-spacing: 1px;">
+                                <textPath xlink:href="#curve1" startOffset="50%" text-anchor="middle">
+                                    Panduan Warna
+                                </textPath>
+                            </text>
+                            <text style="fill: #941023; font-family: 'Caveat', cursive; font-weight: 700; font-size: 42px; letter-spacing: 1px;">
+                                <textPath xlink:href="#curve2" startOffset="50%" text-anchor="middle">
+                                    Menstruasi
+                                </textPath>
+                            </text>
+                        </svg>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- Item 1: Merah Cerah -->
+                        <div class="flex items-center gap-4 pb-4 border-b-2" style="border-color: #CC8371;">
+                            <!-- Icon langsung tanpa wrapper/block -->
+                            <img src="Warna_Darah1.png" alt="Warna_Darah1.png" class="w-14 h-14 object-contain shrink-0" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                            <div class="w-14 h-14 flex items-center justify-center text-[10px] text-center border border-dashed border-gray-500 rounded hidden text-gray-600">Warna_Darah1.png</div>
+                            
+                            <div>
+                                <h5 class="font-bold text-lg mb-1" style="color: #CC8371;">Merah Cerah</h5>
+                                <p class="text-sm font-medium leading-tight" style="color: #CC8371;">Darah segar yang mengalir dengan lancar</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Merah Gelap -->
+                        <div class="flex items-center gap-4 pb-4 border-b-2" style="border-color: #CC8371;">
+                            <!-- Icon langsung tanpa wrapper/block -->
+                            <img src="Warna_Darah2.png" alt="Warna_Darah2.png" class="w-14 h-14 object-contain shrink-0" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                            <div class="w-14 h-14 flex items-center justify-center text-[10px] text-center border border-dashed border-gray-500 rounded hidden text-gray-600">Warna_Darah2.png</div>
+
+                            <div>
+                                <h5 class="font-bold text-lg mb-1" style="color: #760E24;">Merah Gelap</h5>
+                                <p class="text-sm font-medium leading-tight" style="color: #760E24;">Darah menstruasi yang teroksidasi biasanya muncul pada awal dan akhir periode</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Orange -->
+                        <div class="flex items-center gap-4 pb-4 border-b-2" style="border-color: #CC8371;">
+                            <!-- Icon langsung tanpa wrapper/block -->
+                            <img src="Warna_Darah3.png" alt="Warna_Darah3.png" class="w-14 h-14 object-contain shrink-0" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                            <div class="w-14 h-14 flex items-center justify-center text-[10px] text-center border border-dashed border-gray-500 rounded hidden text-gray-600">Warna_Darah3.png</div>
+
+                            <div>
+                                <h5 class="font-bold text-lg mb-1" style="color: #E7A044;">Orange</h5>
+                                <p class="text-sm font-medium leading-tight" style="color: #E7A044;">Darah menstruasi yang tercampur dengan lendir serviks, kemungkinan ada infeksi atau penyakit seksual yang menular</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: Coklat -->
+                        <div class="flex items-center gap-4 pb-4 border-b-2" style="border-color: #CC8371;">
+                            <!-- Icon langsung tanpa wrapper/block -->
+                            <img src="Warna_Darah4.png" alt="Warna_Darah4.png" class="w-14 h-14 object-contain shrink-0" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                            <div class="w-14 h-14 flex items-center justify-center text-[10px] text-center border border-dashed border-gray-500 rounded hidden text-gray-600">Warna_Darah4.png</div>
+
+                            <div>
+                                <h5 class="font-bold text-lg mb-1" style="color: #5F4637;">Coklat</h5>
+                                <p class="text-sm font-medium leading-tight" style="color: #5F4637;">Darah yang muncul di awal dan akhir menstruasi atau darah yang tersisa</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 5: Hitam -->
+                        <div class="flex items-center gap-4 pb-4 border-b-2" style="border-color: #CC8371;">
+                            <!-- Icon langsung tanpa wrapper/block -->
+                            <img src="Warna_Darah5.png" alt="Warna_Darah5.png" class="w-14 h-14 object-contain shrink-0" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                            <div class="w-14 h-14 flex items-center justify-center text-[10px] text-center border border-dashed border-gray-500 rounded hidden text-gray-600">Warna_Darah5.png</div>
+
+                            <div>
+                                <h5 class="font-bold text-lg mb-1" style="color: #353035;">Hitam</h5>
+                                <p class="text-sm font-medium leading-tight" style="color: #353035;">Kemungkinan adanya infeksi rahim atau vaginosis bakteri</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Image 2: Warna Keputihan -->
@@ -881,73 +963,98 @@
                 </div>
             </div>
 
-            <!-- Block Baru 4: Hal yang Diharamkan (Layout 2 Kolom dengan Block Transparan) -->
-            <!-- Updated Color Variation -->
-            <div class="rounded-[2rem] p-8 mt-8 shadow-lg transition-colors duration-300 bg-[#FCE7F3] dark:bg-[#9D174D]">
-                <h4 class="font-bold text-rose-900 dark:text-pink-100 text-2xl mb-8 text-center leading-tight">10 Perkara yang Diharamkan bagi Wanita Haid</h4>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Kolom Kiri (1-5) -->
-                    <div class="space-y-4">
-                        <!-- Item 1 -->
-                        <div class="bg-white/40 dark:bg-black/20 p-4 rounded-2xl flex gap-4 items-start shadow-sm backdrop-blur-sm hover:bg-white/50 transition">
-                            <span class="bg-white/60 dark:bg-white/10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-rose-800 dark:text-pink-200 text-sm shrink-0 border border-white/30">1</span>
-                            <span class="pt-1.5 text-rose-900 dark:text-pink-100 text-sm font-medium"><strong>Shalat</strong> (Baik Fardhu maupun Sunnah).</span>
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="bg-white/40 dark:bg-black/20 p-4 rounded-2xl flex gap-4 items-start shadow-sm backdrop-blur-sm hover:bg-white/50 transition">
-                            <span class="bg-white/60 dark:bg-white/10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-rose-800 dark:text-pink-200 text-sm shrink-0 border border-white/30">2</span>
-                            <span class="pt-1.5 text-rose-900 dark:text-pink-100 text-sm font-medium"><strong>Thawaf</strong> (Mengelilingi Ka'bah).</span>
-                        </div>
-                        <!-- Item 3 -->
-                         <div class="bg-white/40 dark:bg-black/20 p-4 rounded-2xl flex gap-4 items-start shadow-sm backdrop-blur-sm hover:bg-white/50 transition">
-                            <span class="bg-white/60 dark:bg-white/10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-rose-800 dark:text-pink-200 text-sm shrink-0 border border-white/30">3</span>
-                            <span class="pt-1.5 text-rose-900 dark:text-pink-100 text-sm font-medium"><strong>Menyentuh Mushaf</strong> (Al-Qur'an).</span>
-                        </div>
-                        <!-- Item 4 -->
-                         <div class="bg-white/40 dark:bg-black/20 p-4 rounded-2xl flex gap-4 items-start shadow-sm backdrop-blur-sm hover:bg-white/50 transition">
-                            <span class="bg-white/60 dark:bg-white/10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-rose-800 dark:text-pink-200 text-sm shrink-0 border border-white/30">4</span>
-                            <span class="pt-1.5 text-rose-900 dark:text-pink-100 text-sm font-medium"><strong>Membawa Mushaf</strong> (Kecuali dalam keadaan darurat untuk menjaganya).</span>
-                        </div>
-                        <!-- Item 5 -->
-                         <div class="bg-white/40 dark:bg-black/20 p-4 rounded-2xl flex gap-4 items-start shadow-sm backdrop-blur-sm hover:bg-white/50 transition">
-                            <span class="bg-white/60 dark:bg-white/10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-rose-800 dark:text-pink-200 text-sm shrink-0 border border-white/30">5</span>
-                            <span class="pt-1.5 text-rose-900 dark:text-pink-100 text-sm font-medium"><strong>Membaca Al-Qur'an</strong> (Dengan niat membaca Al-Qur'an, bukan dzikir/doa).</span>
-                        </div>
-                    </div>
+            <!-- Block Baru 4: Panduan Qadha Shalat (Pengganti 10 Perkara) -->
+            <div class="rounded-[2rem] p-6 md:p-8 mt-8 shadow-lg transition-colors duration-300 bg-[#FFF8E7] dark:bg-[#2D2420] border border-amber-100 dark:border-none">
+                <h4 class="font-bold text-red-900 dark:text-amber-100 text-xl md:text-2xl mb-2 text-center leading-tight">
+                    SUPAYA TIDAK TERJATUH KE DALAM<br>DOSA BESAR MENINGGALKAN SALAT
+                </h4>
+                <div class="w-20 h-1 bg-red-900 dark:bg-amber-500 mx-auto rounded-full mb-8 opacity-80"></div>
 
-                    <!-- Kolom Kanan (6-10) -->
-                    <div class="space-y-4">
-                        <!-- Item 6 -->
-                         <div class="bg-white/40 dark:bg-black/20 p-4 rounded-2xl flex gap-4 items-start shadow-sm backdrop-blur-sm hover:bg-white/50 transition">
-                            <span class="bg-white/60 dark:bg-white/10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-rose-800 dark:text-pink-200 text-sm shrink-0 border border-white/30">6</span>
-                            <span class="pt-1.5 text-rose-900 dark:text-pink-100 text-sm font-medium"><strong>Puasa</strong> (Baik Wajib maupun Sunnah, wajib diqadha untuk puasa Ramadhan).</span>
-                        </div>
-                        <!-- Item 7 -->
-                         <div class="bg-white/40 dark:bg-black/20 p-4 rounded-2xl flex gap-4 items-start shadow-sm backdrop-blur-sm hover:bg-white/50 transition">
-                            <span class="bg-white/60 dark:bg-white/10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-rose-800 dark:text-pink-200 text-sm shrink-0 border border-white/30">7</span>
-                            <span class="pt-1.5 text-rose-900 dark:text-pink-100 text-sm font-medium"><strong>I'tikaf</strong> (Berdiam diri di dalam Masjid).</span>
-                        </div>
-                        <!-- Item 8 -->
-                         <div class="bg-white/40 dark:bg-black/20 p-4 rounded-2xl flex gap-4 items-start shadow-sm backdrop-blur-sm hover:bg-white/50 transition">
-                            <span class="bg-white/60 dark:bg-white/10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-rose-800 dark:text-pink-200 text-sm shrink-0 border border-white/30">8</span>
-                            <span class="pt-1.5 text-rose-900 dark:text-pink-100 text-sm font-medium"><strong>Lewat di dalam Masjid</strong> (Jika khawatir darah menetes mengotori masjid).</span>
-                        </div>
-                        <!-- Item 9 -->
-                         <div class="bg-white/40 dark:bg-black/20 p-4 rounded-2xl flex gap-4 items-start shadow-sm backdrop-blur-sm hover:bg-white/50 transition">
-                            <span class="bg-white/60 dark:bg-white/10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-rose-800 dark:text-pink-200 text-sm shrink-0 border border-white/30">9</span>
-                            <span class="pt-1.5 text-rose-900 dark:text-pink-100 text-sm font-medium"><strong>Istimta'</strong> (Bersenang-senang di antara pusar dan lutut).</span>
-                        </div>
-                        <!-- Item 10 -->
-                         <div class="bg-white/40 dark:bg-black/20 p-4 rounded-2xl flex gap-4 items-start shadow-sm backdrop-blur-sm hover:bg-white/50 transition">
-                            <span class="bg-white/60 dark:bg-white/10 w-8 h-8 rounded-full flex items-center justify-center font-bold text-rose-800 dark:text-pink-200 text-sm shrink-0 border border-white/30">10</span>
-                            <span class="pt-1.5 text-rose-900 dark:text-pink-100 text-sm font-medium"><strong>Jima'</strong> (Hubungan suami istri).</span>
-                        </div>
-                    </div>
+                <!-- Header Kolom (Updated: Lebih Besar & Bold) -->
+                <div class="hidden md:grid grid-cols-2 gap-6 mb-6 px-2 text-lg font-extrabold tracking-wider uppercase text-red-900 dark:text-amber-100">
+                    <div class="text-center">Waktu Berhenti Haid</div>
+                    <div class="text-center">Perkara yang Perlu Dilakukan</div>
                 </div>
 
-                <div class="mt-8 pt-4 border-t border-rose-900/10 dark:border-white/20 text-xs text-rose-900/80 dark:text-pink-100/80 italic text-center">
-                    Sumber: Kitab Safinatun Najah & Kasyifatus Saja
+                <div class="space-y-4">
+                    <!-- Row 1 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Kiri -->
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex items-center justify-center text-center shadow-sm">
+                            <span class="font-bold text-black dark:text-gray-100">Sebelum masuk waktu Subuh<br><span class="text-sm font-normal text-gray-700 dark:text-gray-400">(Masih dalam waktu Isya)</span></span>
+                        </div>
+                        <!-- Kanan -->
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex flex-col justify-center text-center shadow-sm">
+                            <p class="font-bold text-[#8B0000] dark:text-amber-100">Wajib mandi</p>
+                            <p class="text-black dark:text-gray-200 text-sm">Wajib salat Isya & qadha salat Maghrib</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex items-center justify-center text-center shadow-sm">
+                            <span class="font-bold text-black dark:text-gray-100">Masih dalam waktu Subuh</span>
+                        </div>
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex flex-col justify-center text-center shadow-sm">
+                            <p class="font-bold text-[#8B0000] dark:text-amber-100">Wajib mandi</p>
+                            <p class="text-black dark:text-gray-200 text-sm">Wajib salat Subuh</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex items-center justify-center text-center shadow-sm">
+                            <span class="font-bold text-black dark:text-gray-100">Selepas habis waktu Subuh<br><span class="text-sm font-normal text-gray-700 dark:text-gray-400">(Dhuha)</span></span>
+                        </div>
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex flex-col justify-center text-center shadow-sm">
+                            <p class="text-black dark:text-gray-200 text-sm mb-2">Tidak terus wajib mandi & tidak perlu salat Subuh</p>
+                            <p class="font-bold text-[#8B0000] dark:text-amber-100">Wajib mandi untuk salat Zuhur</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex items-center justify-center text-center shadow-sm">
+                            <span class="font-bold text-black dark:text-gray-100">Dalam waktu Zuhur</span>
+                        </div>
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex flex-col justify-center text-center shadow-sm">
+                            <p class="font-bold text-[#8B0000] dark:text-amber-100">Wajib mandi</p>
+                            <p class="text-black dark:text-gray-200 text-sm">Wajib salat Zuhur</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 5 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex items-center justify-center text-center shadow-sm">
+                            <span class="font-bold text-black dark:text-gray-100">Dalam waktu Asar</span>
+                        </div>
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex flex-col justify-center text-center shadow-sm">
+                            <p class="font-bold text-[#8B0000] dark:text-amber-100">Wajib mandi</p>
+                            <p class="text-black dark:text-gray-200 text-sm">Wajib salat Asar & qadha salat Zuhur</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 6 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex items-center justify-center text-center shadow-sm">
+                            <span class="font-bold text-black dark:text-gray-100">Dalam waktu Maghrib</span>
+                        </div>
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex flex-col justify-center text-center shadow-sm">
+                            <p class="font-bold text-[#8B0000] dark:text-amber-100">Wajib mandi</p>
+                            <p class="text-black dark:text-gray-200 text-sm">Wajib salat Maghrib</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 7 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex items-center justify-center text-center shadow-sm">
+                            <span class="font-bold text-black dark:text-gray-100">Dalam waktu Isya</span>
+                        </div>
+                        <div class="bg-[#FFFDF5] dark:bg-[#3E322C] border-2 border-[#8B0000] dark:border-amber-700 rounded-2xl p-4 flex flex-col justify-center text-center shadow-sm">
+                            <p class="font-bold text-[#8B0000] dark:text-amber-100">Wajib mandi</p>
+                            <p class="text-black dark:text-gray-200 text-sm">Wajib salat Isya & qadha salat Maghrib</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
