@@ -670,8 +670,8 @@
                     </h2>
 
                     <!-- 2 & 3. Layout Split: Kiri (Judul) & Kanan (List) -->
-                    <!-- UBAH: Pakai flex-row di semua ukuran layar, atur gap lebih kecil di HP -->
-                    <div class="flex flex-row items-center justify-center gap-4 md:gap-10 mb-8 w-full">
+                    <!-- UBAH: Gunakan w-fit dan mx-auto agar blok benar-benar di tengah -->
+                    <div class="flex flex-row items-center justify-center gap-6 md:gap-12 mb-8 w-fit mx-auto px-2">
                         
                         <!-- Sisi Kiri: Judul Tanda Suci -->
                         <div class="flex flex-col items-center justify-center text-center shrink-0">
@@ -687,7 +687,7 @@
                         <div class="hidden md:block w-px h-16 bg-[#1a472a]/20 dark:bg-white/20"></div>
 
                         <!-- Sisi Kanan: Daftar Point -->
-                        <ul class="text-[#1a472a] dark:text-[#a3c9a8] font-medium text-sm md:text-lg space-y-2 list-disc pl-4 md:pl-0">
+                        <ul class="text-[#1a472a] dark:text-[#a3c9a8] font-medium text-sm md:text-lg space-y-2 list-disc pl-4">
                             <li class="pl-1">Jufuf (Kering)</li>
                             <li class="pl-1">Qoshotul Baidho (cairan putih/bening)</li>
                         </ul>
