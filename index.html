@@ -245,28 +245,32 @@
 </head>
 <body class="min-h-screen dark:bg-slate-900 dark:text-slate-200">
 
-    <!-- Header Update: Lebih Ringkas di Mobile -->
-    <header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md sticky top-0 z-50 px-4 py-3 md:px-6 md:py-4 flex justify-between items-center border-b border-pink-50 dark:border-slate-800 shadow-sm transition-colors duration-300">
+    <!-- Header Update: Lebih Ringkas Lagi di Mobile (Extra Compact) -->
+    <header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md sticky top-0 z-50 px-3 py-2 md:px-6 md:py-4 flex justify-between items-center border-b border-pink-50 dark:border-slate-800 shadow-sm transition-colors duration-300">
         <div class="flex items-center gap-2 md:gap-3">
-            <div class="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-tr from-pink-500 to-rose-400 rounded-xl md:rounded-2xl flex items-center justify-center text-white font-bold shadow-lg text-sm md:text-base">S</div>
+            <!-- Logo diperkecil (w-7 h-7) -->
+            <div class="w-7 h-7 md:w-10 md:h-10 bg-gradient-to-tr from-pink-500 to-rose-400 rounded-lg md:rounded-2xl flex items-center justify-center text-white font-bold shadow-lg text-xs md:text-base">S</div>
             <div>
-                <h1 class="font-bold text-pink-600 dark:text-pink-400 text-base md:text-lg leading-none">SantriSehat</h1>
-                <p class="text-[9px] md:text-[10px] text-gray-400 dark:text-slate-500 font-medium">Pro-Education v2.1</p>
+                <!-- Teks Judul lebih kecil (text-sm) -->
+                <h1 class="font-bold text-pink-600 dark:text-pink-400 text-sm md:text-lg leading-none">SantriSehat</h1>
+                <p class="text-[8px] md:text-[10px] text-gray-400 dark:text-slate-500 font-medium">Pro-Education v2.1</p>
             </div>
         </div>
         <div class="flex items-center gap-1.5 md:gap-2">
-            <button onclick="toggleDarkMode()" class="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-slate-700 transition">
+            <!-- Tombol Dark Mode diperkecil -->
+            <button onclick="toggleDarkMode()" class="w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-slate-700 transition">
                 <!-- Sun Icon -->
-                <svg class="w-4 h-4 md:w-5 md:h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <svg class="w-3.5 h-3.5 md:w-5 md:h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 <!-- Moon Icon -->
-                <svg class="w-4 h-4 md:w-5 md:h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                <svg class="w-3.5 h-3.5 md:w-5 md:h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
             </button>
-            <button onclick="toggleAIChat()" class="flex items-center gap-1.5 md:gap-2 bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 px-3 py-1.5 md:px-4 md:py-2 rounded-xl md:rounded-2xl text-[10px] md:text-xs font-bold hover:bg-pink-100 dark:hover:bg-pink-900/50 transition">
+            <!-- Tombol AI diperkecil & padding dikurangi -->
+            <button onclick="toggleAIChat()" class="flex items-center gap-1 md:gap-2 bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 px-2.5 py-1 md:px-4 md:py-2 rounded-lg md:rounded-2xl text-[9px] md:text-xs font-bold hover:bg-pink-100 dark:hover:bg-pink-900/50 transition">
                 <span class="animate-pulse">✨</span> Tanya AI
             </button>
-            <!-- Hamburger Menu Button (Ukuran disesuaikan mobile) -->
-            <button onclick="toggleMenu()" class="w-8 h-8 md:w-10 md:h-10 rounded-xl md:rounded-2xl flex items-center justify-center bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:bg-pink-100 dark:hover:bg-slate-700 transition ml-0.5">
-                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <!-- Hamburger Menu Button diperkecil -->
+            <button onclick="toggleMenu()" class="w-7 h-7 md:w-10 md:h-10 rounded-lg md:rounded-2xl flex items-center justify-center bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:bg-pink-100 dark:hover:bg-slate-700 transition ml-0.5">
+                <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
     </header>
@@ -327,17 +331,17 @@
         <div class="mt-6 border-t border-gray-100 dark:border-slate-800 pt-6">
             <h4 class="font-bold text-gray-800 dark:text-white mb-3 text-sm">Ukuran Tampilan</h4>
             <div class="flex gap-2 bg-gray-100 dark:bg-slate-800 p-1.5 rounded-xl">
-                <!-- A- diatur ke 16px (Desktop) dan dijadikan Active Default -->
-                <button onclick="changeFontSize(16, this)" class="font-btn font-btn-active flex-1 py-2 text-xs rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition font-bold">A-</button>
+                <!-- A- diturunkan ke 14px (Kecil) -->
+                <button onclick="changeFontSize(14, this)" class="font-btn flex-1 py-2 text-[10px] rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition font-bold">A-</button>
                 
-                <!-- A naik ke 18px -->
-                <button onclick="changeFontSize(18, this)" class="font-btn flex-1 py-2 text-sm rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition">A</button>
+                <!-- A standar 16px (Default Active) -->
+                <button onclick="changeFontSize(16, this)" class="font-btn font-btn-active flex-1 py-2 text-xs font-bold rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition">A</button>
                 
-                <!-- A+ naik ke 20px -->
-                <button onclick="changeFontSize(20, this)" class="font-btn flex-1 py-2 text-base font-bold rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition">A+</button>
+                <!-- A+ naik ke 18px (Besar) -->
+                <button onclick="changeFontSize(18, this)" class="font-btn flex-1 py-2 text-sm font-bold rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition">A+</button>
                 
-                <!-- A++ naik ke 22px -->
-                <button onclick="changeFontSize(22, this)" class="font-btn flex-1 py-2 text-lg font-bold rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition">A++</button>
+                <!-- A++ naik ke 20px (Ekstra Besar) -->
+                <button onclick="changeFontSize(20, this)" class="font-btn flex-1 py-2 text-base font-bold rounded-lg text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-slate-700 transition">A++</button>
             </div>
             <p class="text-[10px] text-gray-400 mt-2 text-center">Sesuaikan kenyamanan bacaanmu</p>
         </div>
